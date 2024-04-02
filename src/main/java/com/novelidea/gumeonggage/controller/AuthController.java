@@ -1,5 +1,6 @@
 package com.novelidea.gumeonggage.controller;
 
+import com.novelidea.gumeonggage.dto.SigninReqDto;
 import com.novelidea.gumeonggage.dto.SignupReqDto;
 import com.novelidea.gumeonggage.service.AuthService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,5 +26,9 @@ public class AuthController {
         authService.signup(signupReqDto);
 
         return ResponseEntity.created(null).body(true);
+    }
+    @PostMapping("/signin")
+    public ResponseEntity<?> signin(@RequestBody SigninReqDto signinReqDto) {
+        return ResponseEntity.ok(authService.signin(signinReqDto));
     }
 }

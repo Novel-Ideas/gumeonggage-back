@@ -1,5 +1,6 @@
 package com.novelidea.gumeonggage.service;
 
+import com.novelidea.gumeonggage.dto.SigninReqDto;
 import com.novelidea.gumeonggage.dto.SignupReqDto;
 import com.novelidea.gumeonggage.entity.User;
 import com.novelidea.gumeonggage.repository.UserMapper;
@@ -17,5 +18,11 @@ public class AuthService {
     public void signup(SignupReqDto signupReqDto){
         User user = signupReqDto.toEntity();
         userMapper.saveUser(user);
+    }
+
+    public String signin(SigninReqDto signinReqDto) {
+        User user = userMapper.findUserByPhonenumber(signinReqDto.getPhoneNumber());
+        // exception만들기
+        return
     }
 }
