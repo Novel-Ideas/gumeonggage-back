@@ -12,7 +12,7 @@ import javax.validation.constraints.Pattern;
 
     public User toEntity() {
         return User.builder()
-                .phone(phoneNumber)
+                .phoneNumber(phoneNumber)
                 .build();
     }
 

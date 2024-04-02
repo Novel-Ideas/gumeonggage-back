@@ -12,8 +12,8 @@ import java.time.LocalDate;
 @AllArgsConstructor
 @Builder
 public class User {
-    private int UserId;
-    private String phone;
+    private int userId;
+    private String phoneNumber;
     private LocalDate createDate;
     private LocalDate updateDate;
 
