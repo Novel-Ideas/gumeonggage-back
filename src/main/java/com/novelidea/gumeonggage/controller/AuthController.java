@@ -1,6 +1,8 @@
 package com.novelidea.gumeonggage.controller;
 
+import com.novelidea.gumeonggage.dto.SignupReqDto;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -13,7 +15,10 @@ import javax.validation.Valid;
 public class AuthController {
 
     @PostMapping("/signup")
-    public ResponseEntity<?> signup(@Valid @RequestBody) {
+    public ResponseEntity<?> signup(@Valid @RequestBody SignupReqDto signupReqDto, BindingResult bindingResult) {
+
+        auth
+
         return ResponseEntity.created(null).body(true);
     }
 }
