@@ -21,9 +21,9 @@ public class AuthService {
         userMapper.saveUser(user);
     }
 
-    public String signin(SigninReqDto signinReqDto) {
+    public boolean signin(SigninReqDto signinReqDto) {
         User user = userMapper.findUserByPhonenumber(signinReqDto.getPhoneNumber());
         // exception만들기
-        return null;
+        return user == null;
     }
 }
