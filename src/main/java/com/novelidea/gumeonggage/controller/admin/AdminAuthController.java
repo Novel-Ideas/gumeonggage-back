@@ -15,7 +15,7 @@ public class AdminAuthController {
 
     @GetMapping("/signin")
     public ResponseEntity<?> adminAuthSignin() {
-
+        System.out.println("signin");
         return ResponseEntity.ok().body(null);
     }
 
