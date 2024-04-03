@@ -21,7 +21,19 @@
         value(0, #{orderListId}, #{answer1}, #{answer2}, #{answer3}, now(), now())
     </insert>
 
-    <select id="findFeedback" resultType="">
-
+    <select id="findFeedback" resultType="list">
+        select
+            olt.order_list_id,
+            olt.order_ok,
+            olt.order_time,
+            olt.order_ok_time,
+            ft.answer1,
+            ft.answer2,
+            ft.answer3
+        from
+            order_list_tb olt
+            left outer join feedback_tb ft on (ft.order_list_id = olt.order_list_id)
+        where
+            olt.order_list_id = #{orderListId}
     </select>
 </mapper>
