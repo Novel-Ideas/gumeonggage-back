@@ -1,5 +1,6 @@
 package com.novelidea.gumeonggage.dto.admin;
 
+import com.novelidea.gumeonggage.entity.admin.Admin;
 import lombok.Data;
 
 import javax.validation.constraints.Email;
@@ -16,5 +17,14 @@ public class AdminSignupReqDto {
     private String name;
     @Email(regexp = "^[0-9a-zA-Z]([-_\\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\\.]?[0-9a-zA-Z])*\\.[a-zA-Z]{1,3}$",message = "이메일 형식이어야합니다") //0314-2
     private String email;
+
+    public Admin toEntity(){
+        return Admin.builder()
+                .adminName(username)
+                .adminPassword(password)
+                .name(name)
+                .email(email)
+                .build();
+    }
 
 }

@@ -17,6 +17,7 @@ public class Admin {
     private int roleId;
     private String adminName;
     private String adminPassword;
+    private String name;
     private String email;
     private LocalDate createDate;
     private LocalDate updateDate;

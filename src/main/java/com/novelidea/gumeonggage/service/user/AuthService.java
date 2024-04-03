@@ -35,7 +35,7 @@ public class AuthService {
 
     public int savepoint(UseEarnPointReqDto useEarnPointReqDto) {
         User user = userMapper.saveUserByPoint(useEarnPointReqDto.getPoint());
-        return (null);
+        return (null); // * 리턴 문
     }
 
 
