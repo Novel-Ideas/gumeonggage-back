@@ -18,8 +18,8 @@ public class AdminSalesController {
         return ResponseEntity.ok(null);
     }
 
-    @GetMapping("/sales/{month}")
-    public ResponseEntity<?> getSales(@PathVariable int month) {
+    @GetMapping("/sales")
+    public ResponseEntity<?> getSales(@RequestParam String month) {
 
         return ResponseEntity.ok().body(adminSalesService.getSalesByMonth(month));
     }

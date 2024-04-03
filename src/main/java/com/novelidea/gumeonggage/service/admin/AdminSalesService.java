@@ -11,7 +11,7 @@ public class AdminSalesService {
     @Autowired
     private SalesMapper salesMapper;
 
-    public Sales getSalesByMonth(int month) {
+    public Sales getSalesByMonth(String month) {
 
         return salesMapper.getSales(month);
     }

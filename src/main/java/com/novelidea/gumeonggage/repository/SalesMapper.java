@@ -6,5 +6,5 @@ import org.apache.ibatis.annotations.Mapper;
 @Mapper
 public interface SalesMapper {
 //    public int updateSales();
-    public Sales getSales(int month);
+    public Sales getSales(String month);
 }
