@@ -1,14 +1,16 @@
 package com.novelidea.gumeonggage.controller.admin;
 
+import com.novelidea.gumeonggage.service.admin.AdminSalesService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/admin")
 public class AdminSalesController {
+
+    @Autowired
+    private AdminSalesService adminSalesService;
 
     @PutMapping("/sales")
     public ResponseEntity<?> salesUpdate() {
@@ -16,10 +18,9 @@ public class AdminSalesController {
         return ResponseEntity.ok(null);
     }
 
-    @GetMapping("/sales")
-    public ResponseEntity<?> getSales() {
+    @GetMapping("/sales/{month}")
+    public ResponseEntity<?> getSales(@PathVariable int month) {
 
-        System.out.println("getsales");
-        return ResponseEntity.ok(null);
+        return ResponseEntity.ok().body(adminSalesService.getSalesByMonth(month));
     }
 }

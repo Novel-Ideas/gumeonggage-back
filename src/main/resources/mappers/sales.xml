@@ -6,27 +6,22 @@
 <mapper namespace="com.novelidea.gumeonggage.repository.SalesMapper">
 
     <resultMap id="SalesResultMap" type="com.novelidea.gumeonggage.entity.Sales">
-        <id property="salesId" column="sales_id" />
+        <result property="month" column="month" />
+        <result property="orderCount" column="order_count" />
         <result property="totalSales" column="total_sales" />
-        <result property="period" column="period" />
     </resultMap>
-
-    <update id="updateSales" >
-        update
-            sales_tb
-        set
-
-    </update>
-
 
     <select id="getSales" resultMap="SalesResultMap">
         select
-            book_type_id,
-            book_type_name,
-            create_date,
-            update_date
+            DATE_FORMAT(order_time,'%m') as month,
+            sum(menu_price_total) as total_sales,
+            (select count(distinct order_list_id) from m_sales) as order_count
         from
-            user_tb
+            m_sales
+        where
+            DATE_FORMAT(order_time,'%m') = #{month}
+        group by
+            month;
     </select>
 
 </mapper>

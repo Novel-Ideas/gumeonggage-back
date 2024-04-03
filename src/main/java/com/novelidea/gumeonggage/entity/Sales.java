@@ -5,14 +5,12 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.time.LocalDateTime;
-
 @Builder
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 public class Sales {
-    private int salesId;
+    private int month;
+    private int orderCount;
     private int totalSales;
-    private LocalDateTime period;
 }
