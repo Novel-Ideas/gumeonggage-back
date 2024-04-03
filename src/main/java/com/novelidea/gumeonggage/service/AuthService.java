@@ -2,6 +2,7 @@ package com.novelidea.gumeonggage.service;
 
 import com.novelidea.gumeonggage.dto.SigninReqDto;
 import com.novelidea.gumeonggage.dto.SignupReqDto;
+import com.novelidea.gumeonggage.dto.UseEarnPointReqDto;
 import com.novelidea.gumeonggage.entity.User;
 import com.novelidea.gumeonggage.repository.UserMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,10 +22,22 @@ public class AuthService {
     }
 
     public User signin(SigninReqDto signinReqDto) { // 전화번호 조회
-        User user = userMapper.findUserByPhonenumber(signinReqDto.getPhoneNumber());
+        User user = signinReqDto.toEntity();
+        userMapper.findUserByPhonenumber(signinReqDto.getPhoneNumber());
         // * exception만들기
         return user != null ? user : null;
     }
+
+    public int usepoint(UseEarnPointReqDto useEarnPointReqDto ) {
+        User user = userMapper.useUserByPoint(useEarnPointReqDto.getPoint());
+        return useEarnPointReqDto.getPoint(); // * 리턴 문
+    }
+
+    public int savepoint(UseEarnPointReqDto useEarnPointReqDto) {
+        User user = userMapper.saveUserByPoint(useEarnPointReqDto.getPoint());
+        return (null);
+    }
+
 
 
 }

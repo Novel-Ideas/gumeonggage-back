@@ -7,4 +7,6 @@ import org.apache.ibatis.annotations.Mapper;
 public interface UserMapper {
     public int saveUser(User user);
     public User findUserByPhonenumber(String phoneNumber);
+    public int useUserByPoint(int point);
+    public int saveUserByPoint(int point):
 }
