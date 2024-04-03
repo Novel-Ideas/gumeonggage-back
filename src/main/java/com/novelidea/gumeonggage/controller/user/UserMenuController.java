@@ -20,4 +20,10 @@ public class UserMenuController {
         System.out.println(feedbackReqDto);
         return ResponseEntity.ok().body(true);
     }
+
+    @GetMapping("/order/point")
+    public ResponseEntity<?> getPoint(@RequestParam String number) {
+        System.out.println(number);
+        return ResponseEntity.ok().body(null);
+    }
 }
