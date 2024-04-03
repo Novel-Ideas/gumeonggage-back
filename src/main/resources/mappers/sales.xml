@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.novelidea.gumeonggage.repository.SalesMapper">
+
+    <resultMap id="SalesResultMap" type="com.novelidea.gumeonggage.entity.Sales">
+        <id property="salesId" column="sales_id" />
+        <result property="totalSales" column="total_sales" />
+        <result property="period" column="period" />
+    </resultMap>
+
+    <update id="updateSales" >
+        update
+            sales_tb
+        set
+
+    </update>
+
+
+    <select id="getSales" resultMap="SalesResultMap">
+        select
+            book_type_id,
+            book_type_name,
+            create_date,
+            update_date
+        from
+            user_tb
+    </select>
+
+</mapper>
