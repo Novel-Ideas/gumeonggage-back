@@ -9,8 +9,9 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/menu")
 public class UserMenuController {
 
-    @PostMapping("/menu/order/feedback")
+    @PostMapping("/order/feedback")
     public ResponseEntity<?> addFeedback() {
-        return ResponseEntity.ok(null);
+        System.out.println("/order/feedback");
+        return ResponseEntity.ok().body(null);
     }
 }

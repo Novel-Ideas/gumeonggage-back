@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.novelidea.gumeonggage.repository.FeedbackMapper">
+    <resultMap id="FeedbackResultMap" type="com.novelidea.gumeonggage.entity.user.Feedback">
+        <result property="orderListId" column="order_list_id" />
+        <result property="answer1" column="answer1" />
+        <result property="answer2" column="answer2" />
+        <result property="answer3" column="answer3" />
+        <result property="createDate" column="create_date" />
+        <result property="updateDate" column="update_date" />
+    </resultMap>
+
+    <insert
+            id="saveFeedback"
+            parameterType="com.novelidea.gumeonggage.entity.user.Feedback"
+    >
+        insert into feedback_tb
+        value(0, #{orderListId}, #{answer1}, #{answer2}, #{answer3}, now(), now())
+    </insert>
+</mapper>
