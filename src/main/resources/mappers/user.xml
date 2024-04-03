@@ -6,7 +6,7 @@
 
     <mapper namespace="com.novelidea.gumeonggage.repository.UserMapper">
 
-        <resultMap id="saveUser" type="com.novelidea.gumeonggage.entity.User">
+        <resultMap id="saveUser" type="com.novelidea.gumeonggage.entity.user.User">
             <id property="userId" column="user_id" />
             <result property="phoneNumber" column="phone_number" />
             <result property="createDate" column="create_date" />
@@ -14,7 +14,7 @@
         </resultMap>
 
         <insert id="saveUser"
-                parameterType="com.novelidea.gumeonggage.entity.User"
+                parameterType="com.novelidea.gumeonggage.entity.user.User"
                 keyProperty="userId"
                 useGeneratedKeys="true"
         >

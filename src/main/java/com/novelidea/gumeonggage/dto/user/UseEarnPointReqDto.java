@@ -1,4 +1,4 @@
-package com.novelidea.gumeonggage.dto;
+package com.novelidea.gumeonggage.dto.user;
 
 import lombok.Data;
 

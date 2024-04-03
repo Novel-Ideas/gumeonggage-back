@@ -1,6 +1,6 @@
-package com.novelidea.gumeonggage.dto;
+package com.novelidea.gumeonggage.dto.user;
 
-import com.novelidea.gumeonggage.entity.User;
+import com.novelidea.gumeonggage.entity.user.User;
 import lombok.Data;
 
 import javax.validation.constraints.Pattern;

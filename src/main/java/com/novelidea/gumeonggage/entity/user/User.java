@@ -1,4 +1,4 @@
-package com.novelidea.gumeonggage.entity;
+package com.novelidea.gumeonggage.entity.user;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

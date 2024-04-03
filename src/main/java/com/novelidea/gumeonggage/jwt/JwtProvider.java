@@ -1,14 +1,8 @@
 package com.novelidea.gumeonggage.jwt;
 
-import com.novelidea.gumeonggage.entity.User;
+import com.novelidea.gumeonggage.entity.user.User;
 import com.novelidea.gumeonggage.repository.UserMapper;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.GrantedAuthority;
 import org.springframework.stereotype.Component;
-
-import javax.validation.Valid;
-import java.security.Key;
-import java.util.Collection;
 
 @Component
 public class JwtProvider {

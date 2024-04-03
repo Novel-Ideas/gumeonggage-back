@@ -1,7 +1,7 @@
 package com.novelidea.gumeonggage.controller.user;
 
-import com.novelidea.gumeonggage.dto.SigninReqDto;
-import com.novelidea.gumeonggage.dto.SignupReqDto;
+import com.novelidea.gumeonggage.dto.user.SigninReqDto;
+import com.novelidea.gumeonggage.dto.user.SignupReqDto;
 import com.novelidea.gumeonggage.service.AuthService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
