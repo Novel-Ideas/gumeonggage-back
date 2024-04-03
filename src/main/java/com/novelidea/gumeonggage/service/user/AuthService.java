@@ -1,4 +1,4 @@
-package com.novelidea.gumeonggage.service;
+package com.novelidea.gumeonggage.service.user;
 
 import com.novelidea.gumeonggage.dto.user.SigninReqDto;
 import com.novelidea.gumeonggage.dto.user.SignupReqDto;

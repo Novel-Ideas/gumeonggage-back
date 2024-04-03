@@ -1,14 +1,18 @@
 package com.novelidea.gumeonggage.controller.admin;
 
+import com.novelidea.gumeonggage.dto.admin.AdminSignupReqDto;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
+
+import javax.validation.Valid;
 
 @RestController
 @RequestMapping("/admin/auth")
 public class AdminAuthController {
 
     @PostMapping("/signup")
-    public ResponseEntity<?> adminAuthSignup() {
+    public ResponseEntity<?> adminAuthSignup(@Valid @RequestBody AdminSignupReqDto adminSignupReqDto, BindingResult bindingResult) {
 
         return ResponseEntity.ok().body(null);
     }
