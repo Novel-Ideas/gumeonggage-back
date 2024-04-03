@@ -4,7 +4,6 @@ import com.novelidea.gumeonggage.dto.user.FeedbackReqDto;
 import com.novelidea.gumeonggage.service.user.FeedbackService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,10 +17,10 @@ public class UserMenuController {
     @Autowired
     private FeedbackService feedbackService;
 
-
     @PostMapping("/order/feedback")
-    public ResponseEntity<?> saveFeedback(@Valid @RequestBody FeedbackReqDto feedbackReqDto, BindingResult bindingResult) {
+    public ResponseEntity<?> saveFeedback(@RequestBody FeedbackReqDto feedbackReqDto) {
         feedbackService.saveFeedback(feedbackReqDto);
-        return ResponseEntity.created(null).body(true);
+        System.out.println(feedbackReqDto);
+        return ResponseEntity.ok().body(true);
     }
 }

@@ -10,6 +10,7 @@ import org.springframework.transaction.annotation.Transactional;
 public class FeedbackService {
     @Autowired
     private FeedbackMapper feedbackMapper;
+
     @Transactional(rollbackFor = Exception.class)
     public void saveFeedback(FeedbackReqDto feedbackReqDto) {
         feedbackMapper.saveFeedback(feedbackReqDto.toEntity());
