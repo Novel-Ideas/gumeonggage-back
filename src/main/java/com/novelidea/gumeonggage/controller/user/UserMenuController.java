@@ -2,6 +2,7 @@ package com.novelidea.gumeonggage.controller.user;
 
 import com.novelidea.gumeonggage.dto.user.FeedbackReqDto;
 import com.novelidea.gumeonggage.service.user.FeedbackService;
+import com.novelidea.gumeonggage.service.user.PointService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -14,6 +15,9 @@ public class UserMenuController {
     @Autowired
     private FeedbackService feedbackService;
 
+    @Autowired
+    private PointService pointService;
+
     @PostMapping("/order/feedback/add")
     public ResponseEntity<?> saveFeedback(@RequestBody FeedbackReqDto feedbackReqDto) {
         feedbackService.saveFeedback(feedbackReqDto);
@@ -23,7 +27,7 @@ public class UserMenuController {
 
     @GetMapping("/order/point")
     public ResponseEntity<?> getPoint(@RequestParam String number) {
-        System.out.println(number);
-        return ResponseEntity.ok().body(null);
+
+        return ResponseEntity.ok().body(pointService.getPointByNumber(number));
     }
 }
