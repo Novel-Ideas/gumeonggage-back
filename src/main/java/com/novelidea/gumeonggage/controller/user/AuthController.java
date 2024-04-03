@@ -6,10 +6,7 @@ import com.novelidea.gumeonggage.service.AuthService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 
@@ -20,15 +17,16 @@ public class AuthController {
     @Autowired
     private AuthService authService;
 
-    @PostMapping("/signup")
+    @PostMapping("/signup") // 전화번호 가입
     public ResponseEntity<?> signup(@Valid @RequestBody SignupReqDto signupReqDto, BindingResult bindingResult) {
 
         authService.signup(signupReqDto);
 
         return ResponseEntity.created(null).body(true);
     }
-    @PostMapping("/signin")//point
+    @GetMapping("/signin") // 전화번호 조회
     public ResponseEntity<?> signin(@RequestBody SigninReqDto signinReqDto) {
-        return ResponseEntity.ok(authService.signin(signinReqDto));
+
+        return ResponseEntity.ok(authService.signin(signinReqDto));// * true false 반환 작업 해야함
     }
 }

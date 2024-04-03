@@ -21,6 +21,7 @@
             insert into user_tb
             values(0, #{phoneNumber}, now(), now())
         </insert>
+
     </mapper>
 
 

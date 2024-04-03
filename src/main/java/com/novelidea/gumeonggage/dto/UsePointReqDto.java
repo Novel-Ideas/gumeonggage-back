@@ -1,0 +1,8 @@
+package com.novelidea.gumeonggage.dto;
+
+import lombok.Data;
+
+@Data
+public class UsePointReqDto {//주문번호 회원아이디 user id orderlist_id 포인트
+    private String point;
+}
