@@ -24,6 +24,6 @@ public class AuthService {
     public String signin(SigninReqDto signinReqDto) {
         User user = userMapper.findUserByPhonenumber(signinReqDto.getPhoneNumber());
         // exception만들기
-        return JwtProvider;
+        return null;
     }
 }

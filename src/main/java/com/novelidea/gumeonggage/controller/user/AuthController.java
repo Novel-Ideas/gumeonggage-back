@@ -1,4 +1,4 @@
-package com.novelidea.gumeonggage.controller;
+package com.novelidea.gumeonggage.controller.user;
 
 import com.novelidea.gumeonggage.dto.SigninReqDto;
 import com.novelidea.gumeonggage.dto.SignupReqDto;

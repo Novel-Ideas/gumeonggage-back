@@ -12,7 +12,7 @@ import java.util.Collection;
 
 @Component
 public class JwtProvider {
-    private final Key key;
+//    private final Key key;
     private UserMapper userMapper;
 //    public JwtProvider(@Valid("${jwt.secret}") String secret,
 //                       @Autowired UserMapper userMapper) {
@@ -21,6 +21,7 @@ public class JwtProvider {
     public String generateToken(User user) {
         int UserId = user.getUserId();
         String username = user.getPhoneNumber();
-        Collection<? extends GrantedAuthority> authorities = user.get
+//        Collection<? extends GrantedAuthority> authorities = user.get
+        return null;
     }
 }
