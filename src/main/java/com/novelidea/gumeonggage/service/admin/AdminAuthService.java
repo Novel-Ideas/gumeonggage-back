@@ -13,9 +13,15 @@ public class AdminAuthService {
     @Autowired
     UserMapper userMapper;
 
-    @Transactional(rollbackFor = Exception.class)
-    public void adminAuthSignup(AdminSignupReqDto adminSignupReqDto) {
+    @Transactional(rollbackFor = Exception.class)// * 롤 계정 머지
+    public void adminSignup(AdminSignupReqDto adminSignupReqDto) {
         Admin admin = adminSignupReqDto.toEntity();
+        userMapper.saveAdmin(admin);
+    }
+
+    public String adminSignin(AdminSignupReqDto adminSignupReqDto) {
+        Admin admin = userMapper.findAdminByUsername(adminSignupReqDto.getUsername());
+
     }
 
 }

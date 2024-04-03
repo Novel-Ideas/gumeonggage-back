@@ -12,6 +12,10 @@
             <result property="createDate" column="create_date" />
             <result property="updateDate" column="update_date" />
         </resultMap>
+        <resultMap id="saveAdmin" type="com.novelidea.gumeonggage.entity.admin.Admin">
+            <id property="userId" column="user_id" />
+
+        </resultMap>
 
         <insert id="saveUser"
                 parameterType="com.novelidea.gumeonggage.entity.user.User"

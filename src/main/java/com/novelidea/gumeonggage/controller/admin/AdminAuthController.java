@@ -14,17 +14,17 @@ import javax.validation.Valid;
 public class AdminAuthController {
 
     @Autowired
-    AdminAuthService adminAuthService
+    AdminAuthService adminAuthService;
     @PostMapping("/signup")
-    public ResponseEntity<?> adminAuthSignup(@Valid @RequestBody AdminSignupReqDto adminSignupReqDto, BindingResult bindingResult) {
-        adminAuthService.adminAuthSignup(adminSignupReqDto);
-        return ResponseEntity.ok().body(null);
+    public ResponseEntity<?> adminSignup(@Valid @RequestBody AdminSignupReqDto adminSignupReqDto, BindingResult bindingResult) {
+        adminAuthService.adminSignup(adminSignupReqDto);
+        return ResponseEntity.created(null).body(true);
     }
 
     @GetMapping("/signin")
-    public ResponseEntity<?> adminAuthSignin() {
-        System.out.println("signin");
-        return ResponseEntity.ok().body(null);
+    public ResponseEntity<?> adminSignin(@RequestBody AdminSignupReqDto adminSignupReqDto) {
+
+        return ResponseEntity.ok(adminAuthService.adminSignin).body(null);
     }
 
     @PutMapping("/edit/password")
