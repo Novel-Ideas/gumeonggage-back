@@ -41,8 +41,12 @@
             left outer join category_tb ct on(ct.category_id = mt.category_id)
     </select>
 
-    <delete id="deleteMenuByMenuId" parameterType="list">
-
+    <delete id="deleteMenuByMenuId" parameterType="int">
+        delete
+        from
+            menu_tb
+        where
+            menu_id = #{menuId}
     </delete>
 
     <update id="updateMenuByMenuId" parameterType="com.novelidea.gumeonggage.entity.Menu">
