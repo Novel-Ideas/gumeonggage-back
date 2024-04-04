@@ -9,12 +9,8 @@ import lombok.NoArgsConstructor;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class Menu {
-    private int menuId;
-    private String menuName;
+public class Category {
     private int categoryId;
-    private int menuPrice;
-    private int menuCal;
-    private String menuImgUrl;
+    private String categoryName;
 
 }
