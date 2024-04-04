@@ -19,8 +19,8 @@ public class AdminMenuController {
     }
 
     @GetMapping("/menu")
-    public ResponseEntity<?> searchMenu(AdminSearchMenuReqDto searchMenuReqDto) {
-        return ResponseEntity.ok(null);
+    public ResponseEntity<?> getMenu() {
+        return ResponseEntity.ok(adminMenuService.getMenus());
     }
 
     @PutMapping("/menu")
