@@ -1,8 +1,6 @@
 package com.novelidea.gumeonggage.service.user;
 
-import com.novelidea.gumeonggage.dto.user.SigninReqDto;
 import com.novelidea.gumeonggage.dto.user.SignupReqDto;
-import com.novelidea.gumeonggage.dto.user.UseEarnPointReqDto;
 import com.novelidea.gumeonggage.entity.user.User;
 import com.novelidea.gumeonggage.repository.UserMapper;
 import org.springframework.beans.factory.annotation.Autowired;

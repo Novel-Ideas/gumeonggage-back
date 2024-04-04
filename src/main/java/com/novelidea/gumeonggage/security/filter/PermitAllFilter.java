@@ -16,11 +16,11 @@ public class PermitAllFilter extends GenericFilter {
         HttpServletRequest request = (HttpServletRequest) servletRequest;
         HttpServletResponse response = (HttpServletResponse) servletResponse;
 
-        List<String> antMatchers = List.of("/login", "/error", "/server", "/auth", "/oauth2", "/mail/authenticate");//필터에서 거름
+        List<String> antMatchers = List.of("/login", "/error", "/server", "/auth",  "/admin");
 
         String uri = request.getRequestURI();
-        request.setAttribute("isPermitAll", false); //요청객체는 응답이 될때까지 따라다닌다
-
+        request.setAttribute("isPermitAll", false);
+        System.out.println("permitall");
         for(String antMatcher : antMatchers) {
             if(uri.startsWith(antMatcher)) {
                 request.setAttribute("isPermitAll", true);

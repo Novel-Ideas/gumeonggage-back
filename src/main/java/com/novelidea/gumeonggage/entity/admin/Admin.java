@@ -18,7 +18,6 @@ import java.util.List;
 
 public class Admin {
     private int adminId;
-    private int roleId;
     private String adminName;
     private String adminPassword;
     private String name;

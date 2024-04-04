@@ -25,13 +25,13 @@ public class JwtAuthenticationFilter extends GenericFilter {
         HttpServletResponse response = (HttpServletResponse) servletResponse;
 
         boolean isPermitAll = (Boolean) request.getAttribute("isPermitAll");
-
-        if (!isPermitAll) {// 인증이 필요없으면 그냥 다음 필터로 넘어감
+        System.out.println("Jwt: " + isPermitAll);
+        if (!isPermitAll) {
             String accessToken = request.getHeader("Authorization");
             String removedBearerToken = jwtProvider.removeBearer(accessToken);
             Claims claims = null;
             try {
-                claims = jwtProvider.getClaims(removedBearerToken); // 요청 유알엘에 따라서 이거 실행할건지 말건지
+                claims = jwtProvider.getClaims(removedBearerToken);
             } catch (Exception e) {
                 response.sendError(HttpServletResponse.SC_UNAUTHORIZED);//401 에러 -인증실패
                 return;
@@ -45,13 +45,9 @@ public class JwtAuthenticationFilter extends GenericFilter {
             }
 
             SecurityContextHolder.getContext().setAuthentication(authentication);
-//        }
 
-
-            //전처리
-            filterChain.doFilter(request, response);
-            //후처리
         }
+        filterChain.doFilter(request, response);
 
 
     }
