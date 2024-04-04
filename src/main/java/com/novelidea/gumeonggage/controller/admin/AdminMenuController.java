@@ -24,8 +24,8 @@ public class AdminMenuController {
     }
 
     @PutMapping("/menu")
-    public ResponseEntity<?> updateMenu(int menuId, AdminUpdateMenuReqDto adminUpdateMenuReqDto) {
-        return ResponseEntity.ok(null);
+    public ResponseEntity<?> updateMenu(@RequestBody AdminUpdateMenuReqDto adminUpdateMenuReqDto) {
+        return ResponseEntity.ok(adminMenuService.updateMenu(adminUpdateMenuReqDto));
     }
 
     @DeleteMapping("/menu")

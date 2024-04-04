@@ -48,7 +48,7 @@
     <update id="updateMenuByMenuId" parameterType="com.novelidea.gumeonggage.entity.Menu">
         update
             menu_tb
-        from
+        set
             menu_id = #{menuId},
             menu_name = #{menuName},
             category_id = #{categoryId},
@@ -58,5 +58,7 @@
         where
             menu_id = #{menuId}
     </update>
+
+
 
 </mapper>
