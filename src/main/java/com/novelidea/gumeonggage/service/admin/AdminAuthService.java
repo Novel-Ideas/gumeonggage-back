@@ -1,6 +1,7 @@
 package com.novelidea.gumeonggage.service.admin;
 
 import com.novelidea.gumeonggage.dto.admin.AdminSignupReqDto;
+import com.novelidea.gumeonggage.dto.admin.OAuth2SignupReqDto;
 import com.novelidea.gumeonggage.entity.admin.Admin;
 import com.novelidea.gumeonggage.entity.user.User;
 import com.novelidea.gumeonggage.repository.AdminMapper;
@@ -26,7 +27,9 @@ public class AdminAuthService {
     }
 
     @Transactional(rollbackFor = Exception.class)
-    public void oAuth2Signup()
+    public void oAuth2Signup(OAuth2SignupReqDto oAuth2SignupReqDto) {
+
+    }
 
     public String adminSignin(AdminSignupReqDto adminSignupReqDto) {
         Admin admin = AdminMapper.findAdminByUsername(adminSignupReqDto.getUsername());
