@@ -71,4 +71,13 @@
             admin_name = #{adminName}
     </select>
 
+    <update id="modifyPassword" parameterType="com.novelidea.gumeonggage.entity.admin.Admin">
+        update
+            admin_tb
+        set
+            admin_password = #{adminPassword},
+            update_date = now()
+        where
+            admin_id = #{adinId}
+    </update>
 </mapper>

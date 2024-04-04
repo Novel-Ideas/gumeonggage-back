@@ -1,9 +1,6 @@
-package com.novelidea.gumeonggage.entity.user;
+package com.novelidea.gumeonggage.entity;
 
-import com.novelidea.gumeonggage.dto.admin.FeedbackRespDto;
-import com.novelidea.gumeonggage.dto.user.FeedbackReqDto;
-import com.novelidea.gumeonggage.repository.FeedbackMapper;
-import com.novelidea.gumeonggage.service.user.FeedbackService;
+import com.novelidea.gumeonggage.dto.admin.AdminFeedbackRespDto;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -24,8 +21,8 @@ public class Feedback {
     private LocalDateTime orderTime;
     private LocalDateTime orderOkTime;
 
-    public FeedbackRespDto toFeedbackRespDto() {
-        return FeedbackRespDto.builder()
+    public AdminFeedbackRespDto toFeedbackRespDto() {
+        return AdminFeedbackRespDto.builder()
                 .feedbackId(feedbackId)
                 .orderListId(orderListId)
                 .answer1(answer1)

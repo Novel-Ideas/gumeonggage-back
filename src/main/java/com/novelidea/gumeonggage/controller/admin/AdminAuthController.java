@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
 
 @RestController
-@RequestMapping("/admin/auth")
 public class AdminAuthController {
 
     @Autowired
@@ -28,20 +27,19 @@ public class AdminAuthController {
 //        return ResponseEntity.created(null).body(true);
 //    }
 
-
     @PostMapping("/signin")
     public ResponseEntity<?> adminSignin(@RequestBody AdminSignupReqDto adminSignupReqDto) {
 
         return ResponseEntity.ok(adminAuthService.adminSignin(adminSignupReqDto));
     }
 
-    @PutMapping("/edit/password")
+    @PutMapping("/admin/auth/edit/password")
     public ResponseEntity<?> adminAuthEditPassword() {
 
         return ResponseEntity.ok().body(null);
     }
 
-    @GetMapping("/user")
+    @GetMapping("/admin/auth/users")
     public ResponseEntity<?> getUserAuth() {
 
         return ResponseEntity.ok().body(null);

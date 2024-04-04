@@ -1,7 +1,6 @@
 package com.novelidea.gumeonggage.repository;
 
-import com.novelidea.gumeonggage.entity.admin.Admin;
-import com.novelidea.gumeonggage.entity.user.User;
+import com.novelidea.gumeonggage.entity.User;
 import org.apache.ibatis.annotations.Mapper;
 
 @Mapper

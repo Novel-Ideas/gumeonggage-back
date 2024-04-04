@@ -12,12 +12,6 @@ public class AdminSalesController {
     @Autowired
     private AdminSalesService adminSalesService;
 
-    @PutMapping("/sales")
-    public ResponseEntity<?> salesUpdate() {
-
-        return ResponseEntity.ok(null);
-    }
-
     @GetMapping("/sales")
     public ResponseEntity<?> getSales(@RequestParam String month) {
 

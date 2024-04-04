@@ -1,7 +1,12 @@
 package com.novelidea.gumeonggage.service.user;
 
+<<<<<<< HEAD
 import com.novelidea.gumeonggage.jwt.user.SignupReqDto;
 import com.novelidea.gumeonggage.entity.user.User;
+=======
+import com.novelidea.gumeonggage.dto.user.SignupReqDto;
+import com.novelidea.gumeonggage.entity.User;
+>>>>>>> main
 import com.novelidea.gumeonggage.repository.UserMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

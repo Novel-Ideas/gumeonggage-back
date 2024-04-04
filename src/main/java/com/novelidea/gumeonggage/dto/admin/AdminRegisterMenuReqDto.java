@@ -10,12 +10,16 @@ public class AdminRegisterMenuReqDto {
     private String categoryName;
     private int menuPrice;
     private int menuCal;
+    private int menuId;
     private String menuImgUrl;
 
     public Menu toEntity() {
         return Menu.builder()
                 .menuName(menuName)
                 .categoryId(categoryId)
+                .menuId(menuId)
+                .menuName(menuName)
+                .categoryName(categoryName)
                 .menuPrice(menuPrice)
                 .menuCal(menuCal)
                 .menuImgUrl(menuImgUrl)

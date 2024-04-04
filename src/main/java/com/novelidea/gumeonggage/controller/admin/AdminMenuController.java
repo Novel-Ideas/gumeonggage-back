@@ -7,37 +7,30 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
-
 @RestController
-@RequestMapping("/admin")
 public class AdminMenuController {
+
     @Autowired
     private AdminMenuService adminMenuService;
 
-    @PostMapping("/menu")
+    @PostMapping("/admin/menu")
     public ResponseEntity<?> registerMenu(@RequestBody AdminRegisterMenuReqDto adminRegisterMenuReqDto) {
         return ResponseEntity.ok().body(adminMenuService.saveMenu((adminRegisterMenuReqDto)));
     }
 
-    @GetMapping("/menu")
+    @GetMapping("/admin/menus")
     public ResponseEntity<?> getMenu() {
         return ResponseEntity.ok(adminMenuService.getMenus());
     }
 
-    @PutMapping("/menu")
+    @PutMapping("/admin/menu")
     public ResponseEntity<?> updateMenu(@RequestBody AdminUpdateMenuReqDto adminUpdateMenuReqDto) {
         return ResponseEntity.ok(adminMenuService.updateMenu(adminUpdateMenuReqDto));
     }
 
-    @DeleteMapping("/menu")
+    @DeleteMapping("/admin/menu")
     public ResponseEntity<?> deleteMenu(@RequestParam int menuId) {
         return ResponseEntity.ok(adminMenuService.deleteMenu(menuId));
-    }
-
-    @PutMapping("/menu/complete")
-    public ResponseEntity<?> completeMenu(@RequestParam int orderListId) {
-        return ResponseEntity.ok(adminMenuService.completeMenu(orderListId));
     }
 }
 

@@ -7,7 +7,7 @@ import java.time.LocalDateTime;
 
 @Builder
 @Data
-public class FeedbackRespDto {
+public class AdminFeedbackRespDto {
     private int feedbackId;
     private int orderListId;
     private int answer1;
