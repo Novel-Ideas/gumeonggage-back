@@ -8,12 +8,12 @@
         <id property="menuId" column="menu_id"/>
         <result property="menuName" column="menu_name"/>
         <result property="categoryId" column="category_id"/>
+        <result property="categoryName" column="category_name" />
+        <result property="categoryNameKor" column="category_name_kor" />
         <result property="menuPrice" column="menu_price"/>
         <result property="menuCal" column="menu_cal"/>
         <result property="menuImgUrl" column="menu_img_url"/>
     </resultMap>
-
-
 
     <insert id="saveMenu" parameterType="com.novelidea.gumeonggage.entity.Menu">
         insert into menu_tb
@@ -27,11 +27,40 @@
         )
     </insert>
 
+    <insert id="addOrderList"
+            useGeneratedKeys="true"
+            keyProperty="orderListId"
+            parameterType="com.novelidea.gumeonggage.entity.OrderList">
+        insert into order_list_tb
+        values(
+            0,
+            1,
+            now(),
+            now()
+        )
+    </insert>
+
+    <insert id="addOrders" parameterType="List" >
+        insert into
+            order_tb
+        values
+            <foreach collection="orders" item="order" separator="," >
+                (0, #{order.orderListId}, #{order.menuId}, #{order.menuCount})
+            </foreach>
+    </insert>
+
     <select id="findMenu" resultMap="MenuResultMap">
         select
-
+            mt.menu_id,
+            mt.menu_name,
+            mt.menu_price,
+            mt.menu_cal,
+            ct.category_name,
+            ct.category_name_kor,
+            mt.menu_img_url
         from
-
+            menu_tb mt
+            left outer join category_tb ct on(ct.category_id = mt.category_id)
     </select>
 
     <delete id="deleteMenuByMenuId" parameterType="list">

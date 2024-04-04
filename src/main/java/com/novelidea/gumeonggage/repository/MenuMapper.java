@@ -1,24 +1,23 @@
 package com.novelidea.gumeonggage.repository;
 
+import com.novelidea.gumeonggage.dto.admin.AdminRegisterMenuReqDto;
+import com.novelidea.gumeonggage.dto.user.UserOrderMenusReqDto;
 import com.novelidea.gumeonggage.entity.Menu;
+import com.novelidea.gumeonggage.entity.Order;
+import com.novelidea.gumeonggage.entity.OrderList;
 import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
 @Mapper
 public interface MenuMapper {
-    public int saveMenu(Menu menu);
+    public int saveMenu(AdminRegisterMenuReqDto adminRegisterMenuReqDto);
 
-    public List<Menu> findMenu(
-            @Param("menuId") int menuId,
-            @Param("menuName") String menuName,
-            @Param("categoryId") int categoryId,
-            @Param("categoryName") String categoryName,
-            @Param("menuPrice") int menuPrice,
-            @Param("menuCal") int menuCal,
-            @Param("menuImgUrl") String menuImgUrl
-    );
+    public List<Menu> findMenu();
+
+    public int addOrderList(OrderList orderList);
+
+    public int addOrders(List<Order> orders);
 
     public int deleteMenuByMenuId(List<Integer> menuId);
 

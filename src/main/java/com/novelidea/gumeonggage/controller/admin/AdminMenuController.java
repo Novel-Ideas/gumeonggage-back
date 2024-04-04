@@ -15,14 +15,14 @@ public class AdminMenuController {
     }
 
     @GetMapping("/menu")
-    public ResponseEntity<?> searchMenu(AdminSearchMenuReqDto searchMenuReqDto) {
+    public ResponseEntity<?> searchMenu() {
         return ResponseEntity.ok(null);
     }
 
-    @PutMapping("/menu")
-    public ResponseEntity<?> updateMenu(int menuId, AdminUpdateMenuReqDto adminUpdateMenuReqDto) {
-        return ResponseEntity.ok(null);
-    }
+//    @PutMapping("/menu")
+//    public ResponseEntity<?> updateMenu(int menuId, AdminUpdateMenuReqDto adminUpdateMenuReqDto) {
+//        return ResponseEntity.ok(null);
+//    }
 
     @DeleteMapping("/menu")
     public ResponseEntity<?> deleteMenu() {
