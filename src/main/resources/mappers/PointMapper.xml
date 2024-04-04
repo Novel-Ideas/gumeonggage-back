@@ -6,42 +6,42 @@
 <mapper namespace="com.novelidea.gumeonggage.repository.PointMapper">
     <resultMap id="UserResultMap" type="com.novelidea.gumeonggage.entity.user.User">
         <id property="userId" column="user_id" />
-        <result property="phoneNumber" column="phone_number" />
+        <result property="phoneNumber" column="phonenumber" />
         <collection property="points" javaType="list" resultMap="PointResultMap" />
     </resultMap>
     <resultMap id="PointResultMap" type="com.novelidea.gumeonggage.entity.user.Point">
         <id property="pointId" column="point_id"/>
         <result property="userId" column="user_id"/>
-        <result property="currentPoint" column="current_point"/>
+        <result property="point" column="point"/>
         <result property="orderListId" column="order_list_id"/>
     </resultMap>
 
     <select id="getPoint" resultType="int">
         select
-            sum(current_point) as point
+            sum(point) as point
         from
             user_tb ut
             left outer join point_tb pt on(pt.user_id = ut.user_id)
         where
-            ut.phone_number = #{phoneNumber}
+            ut.phonenumber = #{phonenumber}
     </select>
 
     <select id="findUser" resultMap="UserResultMap">
         select
             ut.user_id,
-            ut.phone_number,
-            pt.current_point,
+            ut.phonenumber,
+            pt.point,
             pt.order_list_id
         from
             user_tb ut
             left outer join point_tb pt on(pt.user_id = ut.user_id)
         where
-            ut.phone_number = #{phoneNumber}
+            ut.phonenumber = #{phoneNumber}
     </select>
 
     <insert id="useOrSavePoint">
         insert into
             point_tb
-        values(0, #{userId}, #{currentPoint}, #{orderListId})
+        values(0, #{userId}, #{point}, #{orderListId})
     </insert>
 </mapper>

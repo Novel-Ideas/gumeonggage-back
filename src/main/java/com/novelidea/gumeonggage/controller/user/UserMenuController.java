@@ -38,9 +38,9 @@ public class UserMenuController {
     }
 
     @GetMapping("/order/point")
-    public ResponseEntity<?> getPoint(@RequestParam String number) {
+    public ResponseEntity<?> getPoint(@RequestParam String phonenumber) {
 
-        return ResponseEntity.ok().body(pointService.getPointByPhoneNumber(number));
+        return ResponseEntity.ok().body(pointService.getPointByPhoneNumber(phonenumber));
     }
 
     @PostMapping("/order/point")

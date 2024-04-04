@@ -15,8 +15,8 @@ public class PointService {
     @Autowired
     private PointMapper pointMapper;
 
-    public int getPointByPhoneNumber(String phoneNumber) {
-        return pointMapper.getPoint(phoneNumber);
+    public int getPointByPhoneNumber(String phonenumber) {
+        return pointMapper.getPoint(phonenumber);
     }
 
     public int useOrSavePointByNumber(UseOrSavePointReqDto useOrSavePointReqDto) {

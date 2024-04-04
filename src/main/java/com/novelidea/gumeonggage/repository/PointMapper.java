@@ -7,10 +7,10 @@ import org.apache.ibatis.annotations.Param;
 
 @Mapper
 public interface PointMapper {
-    public User findUser(String phoneNumber);
-    public int getPoint(String phoneNumber);
+    public User findUser(String phonenumber);
+    public int getPoint(String phonenumber);
     public int useOrSavePoint(
             @Param("userId") int userId,
-            @Param("currentPoint") int currentPoint,
+            @Param("point") int point,
             @Param("orderListId") int orderListId);
 }
