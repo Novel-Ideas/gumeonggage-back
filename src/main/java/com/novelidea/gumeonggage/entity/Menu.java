@@ -1,6 +1,7 @@
 package com.novelidea.gumeonggage.entity;
 
-import com.novelidea.gumeonggage.dto.admin.AdminSearchMenuReqDto;
+
+import com.novelidea.gumeonggage.dto.admin.AdminSearchMenuRespDto;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -17,6 +18,18 @@ public class Menu {
     private int menuPrice;
     private int menuCal;
     private String menuImgUrl;
+    private String categoryName;
+    private String categoryNameKor;
 
-    public AdminSearchMenuReqDto toSearchMenuR
+    public AdminSearchMenuRespDto toSearchMenuRespDto() {
+        return AdminSearchMenuRespDto.builder()
+                .menuId(menuId)
+                .menuName(menuName)
+                .menuPrice(menuPrice)
+                .menuCal(menuCal)
+                .menuImgUrl(menuImgUrl)
+                .categoryName(categoryName)
+                .categoryNameKor(categoryNameKor)
+                .build();
+    }
 }

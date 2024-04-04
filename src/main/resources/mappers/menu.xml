@@ -11,6 +11,8 @@
         <result property="menuPrice" column="menu_price"/>
         <result property="menuCal" column="menu_cal"/>
         <result property="menuImgUrl" column="menu_img_url"/>
+        <result property="categoryName" column="category_name" />
+        <result property="categoryNameKor" column="category_name_kor" />
     </resultMap>
 
     <insert id="saveMenu" parameterType="com.novelidea.gumeonggage.entity.Menu">
@@ -25,7 +27,7 @@
         )
     </insert>
 
-    <select id="findMenu" resultMap="MenuResultMap">
+    <select id="getMenu" resultMap="MenuResultMap">
         select
             mt.menu_id,
             mt.menu_name,

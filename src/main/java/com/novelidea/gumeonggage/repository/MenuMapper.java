@@ -10,7 +10,7 @@ import java.util.List;
 public interface MenuMapper {
     public int saveMenu(Menu menu);
 
-    public List<Menu> findMenu();
+    public List<Menu> getMenu();
 
     public int deleteMenuByMenuId(List<Integer> menuId);
 
