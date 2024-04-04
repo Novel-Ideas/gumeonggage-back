@@ -25,6 +25,9 @@ public class AdminAuthService {
         AdminMapper.saveAdmin(admin);
     }
 
+    @Transactional(rollbackFor = Exception.class)
+    public void oAuth2Signup()
+
     public String adminSignin(AdminSignupReqDto adminSignupReqDto) {
         Admin admin = AdminMapper.findAdminByUsername(adminSignupReqDto.getUsername());
         if( admin == null) {
