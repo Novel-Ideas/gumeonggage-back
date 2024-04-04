@@ -13,8 +13,6 @@
         <result property="menuImgUrl" column="menu_img_url"/>
     </resultMap>
 
-
-
     <insert id="saveMenu" parameterType="com.novelidea.gumeonggage.entity.Menu">
         insert into menu_tb
         values(

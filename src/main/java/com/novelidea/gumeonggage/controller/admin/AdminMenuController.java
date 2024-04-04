@@ -2,16 +2,20 @@ package com.novelidea.gumeonggage.controller.admin;
 
 
 import com.novelidea.gumeonggage.dto.admin.*;
+import com.novelidea.gumeonggage.service.admin.AdminMenuService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/admin")
 public class AdminMenuController {
+    @Autowired
+    private AdminMenuService adminMenuService;
 
     @PostMapping("/menu")
-    public ResponseEntity<?> registerMenu(AdminRegisterMenuReqDto adminRegisterMenuReqDto) {
-        return ResponseEntity.ok(null);
+    public ResponseEntity<?> registerMenu(@RequestBody AdminRegisterMenuReqDto adminRegisterMenuReqDto) {
+        return ResponseEntity.ok().body(adminMenuService.saveMenu((adminRegisterMenuReqDto)));
     }
 
     @GetMapping("/menu")
@@ -29,7 +33,7 @@ public class AdminMenuController {
         return ResponseEntity.ok(null);
     }
 
-    @PutMapping("/menu")
+    @PutMapping("/menu/complete")
     public ResponseEntity<?> completeMenu() {
         return ResponseEntity.ok(null);
     }
