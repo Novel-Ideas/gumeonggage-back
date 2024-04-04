@@ -1,4 +1,4 @@
-package com.novelidea.gumeonggage.dto.user;
+package com.novelidea.gumeonggage.jwt.user;
 
 import com.novelidea.gumeonggage.entity.user.User;
 import lombok.Data;
