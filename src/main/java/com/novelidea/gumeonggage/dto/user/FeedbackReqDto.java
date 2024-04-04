@@ -3,12 +3,15 @@ package com.novelidea.gumeonggage.dto.user;
 import com.novelidea.gumeonggage.entity.user.Feedback;
 import lombok.Data;
 
+import java.time.LocalDateTime;
+
 @Data
 public class FeedbackReqDto {
     private int orderListId;
     private int answer1;
     private int answer2;
     private int answer3;
+
 
     public Feedback toEntity() {
         return Feedback.builder()

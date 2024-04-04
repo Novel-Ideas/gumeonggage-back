@@ -15,7 +15,7 @@ public class UserMenuController {
     @Autowired
     private FeedbackService feedbackService;
 
-    @PostMapping("/order/feedback")
+    @PostMapping("/order/feedback/add")
     public ResponseEntity<?> saveFeedback(@RequestBody FeedbackReqDto feedbackReqDto) {
         feedbackService.saveFeedback(feedbackReqDto);
         System.out.println(feedbackReqDto);

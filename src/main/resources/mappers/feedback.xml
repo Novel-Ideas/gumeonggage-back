@@ -9,8 +9,8 @@
         <result property="answer1" column="answer1" />
         <result property="answer2" column="answer2" />
         <result property="answer3" column="answer3" />
-        <result property="createDate" column="create_date" />
-        <result property="updateDate" column="update_date" />
+        <result property="orderTime" column="order_time" />
+        <result property="orderOkTime" column="order_ok_time" />
     </resultMap>
 
     <insert
@@ -20,4 +20,17 @@
         insert into feedback_tb
         value(0, #{orderListId}, #{answer1}, #{answer2}, #{answer3}, now(), now())
     </insert>
+
+    <select id="findFeedback" resultMap="FeedbackResultMap">
+        select
+            olt.order_list_id,
+            olt.order_time,
+            olt.order_ok_time,
+            ft.answer1,
+            ft.answer2,
+            ft.answer3
+        from
+            order_list_tb olt
+            left outer join feedback_tb ft on (ft.order_list_id = olt.order_list_id)
+    </select>
 </mapper>
