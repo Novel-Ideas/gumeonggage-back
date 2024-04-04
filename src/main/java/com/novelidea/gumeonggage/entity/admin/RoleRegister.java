@@ -1,4 +1,4 @@
 package com.novelidea.gumeonggage.entity.admin;
 
-public class OAuth2 {
+public class RoleRegister {
 }

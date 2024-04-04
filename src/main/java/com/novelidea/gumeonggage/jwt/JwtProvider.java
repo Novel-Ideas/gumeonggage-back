@@ -36,7 +36,7 @@ public class JwtProvider {
     public String generateToken(Admin admin) {
         int adminId = admin.getAdminId();
         String adminName = admin.getAdminName();
-        Collection<? extends GrantedAuthority> authorities = admin.getAuthorities();
+        Collection<? extends GrantedAuthority> authorities = admin.getA();
         Date expireDate = new Date(new Date().getTime() +( 1000 * 60 * 60 * 24 * 20));
 
 
@@ -52,47 +52,47 @@ public class JwtProvider {
         return accessToken;
     }
 
-    public String removeBearer(String token) {
-        if(!StringUtils.hasText(token)) { //문자열인지 검증해주는
-            return null;
-        }
-        return token.substring("Bearer ".length());//문자열 잘라서 가지고오는거  bearer 자르기위해서
-    }
-
-    public Claims getClaims(String token) {
-        Claims claims = null;
-        try {
-            claims = Jwts.parserBuilder()
-                    .setSigningKey(key)
-                    .build()
-                    .parseClaimsJws(token)// 토큰을 클래임으로 변환하는 작업
-                    .getBody();
-        } catch (Exception e) {
-            log.error("JWT 인증 오류: {}", e.getMessage());
-        }
-
-        return claims;
-    }
-
-    public Authentication getAuthentication(Claims claims) {
-        String username = claims.get("username").toString();
-        User user = userMapper.findUserByUsername(username);
-        if(user == null) {
-            // 토큰은 유효하지망 db에서 user정보다 삭제되었을 경우
-            return null;
-        }
-        PrincipalUser principalUser = user.toPrincipalUser();// 이름과 자료형만 같지 주소가 같진 않다
-        return new UsernamePasswordAuthenticationToken(principalUser, principalUser.getPassword(), principalUser.getAuthorities());
-        // UsernamePasswordAuthenticationToken 눌러보면 자료형에 맞게끔 3개 다 넣어줘야함 들어가서 생성자를 봐야함 2개 있는것도 있고 3개있는것도있음
-    }
-
-    public String generateAuthMailToken(String toMailAddress) {
-        Date exprireDate = new Date(new Date().getTime() + (1000 * 60 * 5));
-        return Jwts.builder()
-                .claim("toMailAddress",toMailAddress)
-                .setExpiration(exprireDate)
-                .signWith(key, SignatureAlgorithm.HS256)
-                .compact();
-    }
+//    public String removeBearer(String token) {
+//        if(!StringUtils.hasText(token)) { //문자열인지 검증해주는
+//            return null;
+//        }
+//        return token.substring("Bearer ".length());//문자열 잘라서 가지고오는거  bearer 자르기위해서
+//    }
+//
+//    public Claims getClaims(String token) {
+//        Claims claims = null;
+//        try {
+//            claims = Jwts.parserBuilder()
+//                    .setSigningKey(key)
+//                    .build()
+//                    .parseClaimsJws(token)// 토큰을 클래임으로 변환하는 작업
+//                    .getBody();
+//        } catch (Exception e) {
+//            log.error("JWT 인증 오류: {}", e.getMessage());
+//        }
+//
+//        return claims;
+//    }
+//
+//    public Authentication getAuthentication(Claims claims) {
+//        String username = claims.get("username").toString();
+//        User user = userMapper.findUserByUsername(username);
+//        if(user == null) {
+//            // 토큰은 유효하지망 db에서 user정보다 삭제되었을 경우
+//            return null;
+//        }
+//        PrincipalUser principalUser = user.toPrincipalUser();// 이름과 자료형만 같지 주소가 같진 않다
+//        return new UsernamePasswordAuthenticationToken(principalUser, principalUser.getPassword(), principalUser.getAuthorities());
+//        // UsernamePasswordAuthenticationToken 눌러보면 자료형에 맞게끔 3개 다 넣어줘야함 들어가서 생성자를 봐야함 2개 있는것도 있고 3개있는것도있음
+//    }
+//
+//    public String generateAuthMailToken(String toMailAddress) {
+//        Date exprireDate = new Date(new Date().getTime() + (1000 * 60 * 5));
+//        return Jwts.builder()
+//                .claim("toMailAddress",toMailAddress)
+//                .setExpiration(exprireDate)
+//                .signWith(key, SignatureAlgorithm.HS256)
+//                .compact();
+//    }
 
 }
