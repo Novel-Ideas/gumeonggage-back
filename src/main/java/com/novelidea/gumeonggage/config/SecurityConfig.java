@@ -4,7 +4,6 @@ package com.novelidea.gumeonggage.config;
 import com.novelidea.gumeonggage.security.exception.AuthEntryPoint;
 import com.novelidea.gumeonggage.security.filter.JwtAuthenticationFilter;
 import com.novelidea.gumeonggage.security.filter.PermitAllFilter;
-import com.novelidea.gumeonggage.security.handler.OAuth2SuccessHandler;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -30,12 +29,12 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Autowired
     private AuthEntryPoint authEntryPoint;
 
-    @Autowired
-    private OAuth2PrincipalUserService oAuth2PrincipalUserService;
+//    @Autowired
+//    private OAuth2PrincipalUserService oAuth2PrincipalUserService;
 
 
-    @Autowired
-    private OAuth2SuccessHandler oAuth2SuccessHandler;
+//    @Autowired
+//    private OAuth2SuccessHandler oAuth2SuccessHandler;
 
     @Bean
     public BCryptPasswordEncoder passwordEncoder() {
@@ -63,13 +62,13 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 // 요청들어왔을떄 url분석해서 바로보낼건지 jwtAuthenticationFilter거칠지 결정한다
                 .addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class)
                 .exceptionHandling()
-                .authenticationEntryPoint(authEntryPoint)
-                .and()
-                .oauth2Login()// 로그인 시작 이거 다는순간에 oauth2 정보들을 가지고와서 필터 거칠거다
-                .successHandler(oAuth2SuccessHandler)
-                .userInfoEndpoint()
-                // OAuth2로그인 토큰검사
-                .userService(oAuth2PrincipalUserService);
+                .authenticationEntryPoint(authEntryPoint);
+//                .and()
+//                .oauth2Login()// 로그인 시작 이거 다는순간에 oauth2 정보들을 가지고와서 필터 거칠거다
+//                .successHandler(oAuth2SuccessHandler)
+//                .userInfoEndpoint()
+//                // OAuth2로그인 토큰검사
+//                .userService(oAuth2PrincipalUserService);
     }
 
 }

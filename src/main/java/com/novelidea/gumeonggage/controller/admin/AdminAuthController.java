@@ -21,11 +21,11 @@ public class AdminAuthController {
         adminAuthService.adminSignup(adminSignupReqDto);
         return ResponseEntity.created(null).body(true);
     }
-    @PostMapping("/oauth2/signup")
-    public ResponseEntity<?> oAuth2Signup(@Valid @RequestBody OAuth2SignupReqDto oAuth2SignupReqDto, BindingResult bindingResult) {
-        adminAuthService.oAuth2Signup(oAuth2SignupReqDto);
-        return ResponseEntity.created(null).body(true);
-    }
+//    @PostMapping("/oauth2/signup")
+//    public ResponseEntity<?> oAuth2Signup(@Valid @RequestBody OAuth2SignupReqDto oAuth2SignupReqDto, BindingResult bindingResult) {
+//        adminAuthService.oAuth2Signup(oAuth2SignupReqDto);
+//        return ResponseEntity.created(null).body(true);
+//    }
 
 
     @GetMapping("/signin")

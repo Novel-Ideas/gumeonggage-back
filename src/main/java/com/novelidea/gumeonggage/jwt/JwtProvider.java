@@ -1,13 +1,8 @@
 package com.novelidea.gumeonggage.jwt;
 
-import com.study.library.entity.User;
-import com.study.library.repository.UserMapper;
-import com.study.library.security.PrincipalUser;
-import io.jsonwebtoken.Claims;
-import io.jsonwebtoken.Jwts;
-import io.jsonwebtoken.SignatureAlgorithm;
-import io.jsonwebtoken.io.Decoders;
-import io.jsonwebtoken.security.Keys;
+import com.novelidea.gumeonggage.entity.admin.Admin;
+import com.novelidea.gumeonggage.repository.AdminMapper;
+
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -27,21 +22,21 @@ import java.util.List;
 // JSON Web Token(JWT) 생성과 검증을 다루는 클래스가 위치합니다. 클라이언트의 인증을 담당합니다.
 public class JwtProvider {
 
-    private final Key key;
-    private UserMapper userMapper;
+//    private final Key key;
+    private AdminMapper adminMapper;
 
-    public JwtProvider(
-            @Value("${jwt.secret}") String secret,// 야믈에 있는거 가지고와서
-            @Autowired UserMapper userMapper) {// 매개변수에 Autowired달수있다
-        key = Keys.hmacShaKeyFor(Decoders.BASE64.decode(secret));
-        this.userMapper = userMapper;
-    }
+//    public JwtProvider(
+//            @Value("${jwt.secret}") String secret,// 야믈에 있는거 가지고와서
+//            @Autowired AdminMapper adminMapper) {// 매개변수에 Autowired달수있다
+//        key = Keys.hmacShaKeyFor(Decoders.BASE64.decode(secret));
+//        this.userMapper = userMapper;
+//    }
 
 
-    public String generateToken(User user) {
-        int userId = user.getUserId();
-        String username = user.getUsername();
-        Collection<? extends GrantedAuthority> authorities = user.getAuthorities();
+    public String generateToken(Admin admin) {
+        int adminId = admin.getAdminId();
+        String adminName = admin.getAdminName();
+        Collection<? extends GrantedAuthority> authorities = admin.getAuthorities();
         Date expireDate = new Date(new Date().getTime() +( 1000 * 60 * 60 * 24 * 20));
 
 
