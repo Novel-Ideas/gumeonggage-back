@@ -1,5 +1,7 @@
 package com.novelidea.gumeonggage.controller.advice;
 
+import com.novelidea.gumeonggage.exception.SaveException;
+import com.novelidea.gumeonggage.exception.ValidException;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -27,4 +29,4 @@ public class ExceptionControllerAdvice {
         return ResponseEntity.badRequest().body(e.getMessage());
     }
 }
-}
+

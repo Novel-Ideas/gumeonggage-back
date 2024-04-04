@@ -1,21 +1,24 @@
 package com.novelidea.gumeonggage.jwt;
 
+import com.novelidea.gumeonggage.entity.admin.Admin;
 import com.novelidea.gumeonggage.entity.user.User;
 import com.novelidea.gumeonggage.repository.UserMapper;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.security.core.GrantedAuthority;
 import org.springframework.stereotype.Component;
 
+import java.util.Collection;
+
 @Component
+@Slf4j
 public class JwtProvider {
-//    private final Key key;
+
     private UserMapper userMapper;
-//    public JwtProvider(@Valid("${jwt.secret}") String secret,
-//                       @Autowired UserMapper userMapper) {
-//        key = Keys.h
-//    }
-    public String generateToken(User user) {
-        int UserId = user.getUserId();
-        String username = user.getPhoneNumber();
-//        Collection<? extends GrantedAuthority> authorities = user.get
+
+    public String generateToken(Admin admin) {
+        int adminId = admin.getAdminId();
+        String username = admin.getAdminName();
+        Collection<? extends GrantedAuthority> authorities = admin.
         return null;
     }
 }
