@@ -68,6 +68,7 @@
             order_list_tb
         set
             order_ok = 2
+
         where
             order_list_id = #{orderListId}
     </update>
