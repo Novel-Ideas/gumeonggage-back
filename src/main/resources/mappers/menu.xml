@@ -27,9 +27,16 @@
 
     <select id="findMenu" resultMap="MenuResultMap">
         select
-
+            mt.menu_id,
+            mt.menu_name,
+            mt.menu_price,
+            mt.menu_cal,
+            mt.menu_img_url,
+            ct.category_name,
+            ct.category_name_kor
         from
-
+            menu_tb mt
+            left outer join category_tb ct on(ct.category_id = mt.category_id)
     </select>
 
     <delete id="deleteMenuByMenuId" parameterType="list">

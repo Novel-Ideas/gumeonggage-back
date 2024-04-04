@@ -1,5 +1,6 @@
 package com.novelidea.gumeonggage.entity;
 
+import com.novelidea.gumeonggage.dto.admin.AdminSearchMenuReqDto;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -17,4 +18,5 @@ public class Menu {
     private int menuCal;
     private String menuImgUrl;
 
+    public AdminSearchMenuReqDto toSearchMenuR
 }
