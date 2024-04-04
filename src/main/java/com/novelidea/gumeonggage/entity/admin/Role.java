@@ -1,20 +1,21 @@
-package com.novelidea.gumeonggage.entity;
+package com.novelidea.gumeonggage.entity.admin;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
 import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.List;
 
 @Data
+@Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@Builder
-public class User {
-    private int userId;
-    private String phoneNumber;
+public class Role {
+    private int roleId;
+    private String roleName;
+    private String roleNameKor;
     private LocalDate createDate;
     private LocalDate updateDate;
+
 }
