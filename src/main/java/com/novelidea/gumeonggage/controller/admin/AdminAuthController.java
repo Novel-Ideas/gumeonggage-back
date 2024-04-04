@@ -28,11 +28,11 @@ public class AdminAuthController {
 //    }
 
 
-    @GetMapping("/signin")
-    public ResponseEntity<?> adminSignin(@RequestBody AdminSignupReqDto adminSignupReqDto) {
-
-        return ResponseEntity.ok(adminAuthService.adminSignin).body(null);
-    }
+//    @GetMapping("/signin")
+//    public ResponseEntity<?> adminSignin(@RequestBody AdminSignupReqDto adminSignupReqDto) {
+//
+//        return ResponseEntity.ok(adminAuthService.adminSignin).body(null);
+//    }
 
     @PutMapping("/edit/password")
     public ResponseEntity<?> adminAuthEditPassword() {

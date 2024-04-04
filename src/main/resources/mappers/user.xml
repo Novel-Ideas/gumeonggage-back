@@ -6,13 +6,8 @@
 
     <mapper namespace="com.novelidea.gumeonggage.repository.UserMapper">
 
-        <resultMap id="saveUser" type="com.novelidea.gumeonggage.entity.user.User">
-            <id property="userId" column="user_id" />
-            <result property="phoneNumber" column="phone_number" />
-            <result property="createDate" column="create_date" />
-            <result property="updateDate" column="update_date" />
-        </resultMap>
 
+<!-- resultMap 은 조회용 어차피 insert데이터는 그냥 그모양대로 컬럼 순서대로 들어간다-->
         <insert id="saveUser"
                 parameterType="com.novelidea.gumeonggage.entity.user.User"
                 keyProperty="userId"

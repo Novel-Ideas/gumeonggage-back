@@ -1,7 +1,6 @@
 package com.novelidea.gumeonggage.security.filter;
 
 import com.novelidea.gumeonggage.jwt.JwtProvider;
-import com.study.library.jwt.JwtProvider;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.JwtException;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,7 +13,6 @@ import javax.servlet.*;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-
 @Component
 public class JwtAuthenticationFilter extends GenericFilter {
 
@@ -26,9 +24,9 @@ public class JwtAuthenticationFilter extends GenericFilter {
         HttpServletRequest request = (HttpServletRequest) servletRequest;
         HttpServletResponse response = (HttpServletResponse) servletResponse;
 
-        boolean isPermitAll =( Boolean ) request.getAttribute("isPermitAll");
+        boolean isPermitAll = (Boolean) request.getAttribute("isPermitAll");
 
-        if(!isPermitAll) {// 인증이 필요없으면 그냥 다음 필터로 넘어감
+        if (!isPermitAll) {// 인증이 필요없으면 그냥 다음 필터로 넘어감
             String accessToken = request.getHeader("Authorization");
             String removedBearerToken = jwtProvider.removeBearer(accessToken);
             Claims claims = null;
@@ -47,13 +45,14 @@ public class JwtAuthenticationFilter extends GenericFilter {
             }
 
             SecurityContextHolder.getContext().setAuthentication(authentication);
+//        }
+
+
+            //전처리
+            filterChain.doFilter(request, response);
+            //후처리
         }
 
 
-        //전처리
-        filterChain.doFilter(request,response);
-        //후처리
     }
-
-
 }

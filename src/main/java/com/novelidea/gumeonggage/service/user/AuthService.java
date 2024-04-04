@@ -21,13 +21,6 @@ public class AuthService {
         userMapper.saveUser(user);
     }
 
-    public User signin(SigninReqDto signinReqDto) { // 전화번호 조회
-        User user = signinReqDto.toEntity();
-        userMapper.findUserByPhonenumber(signinReqDto.getPhoneNumber());
-        // * exception만들기
-        return user != null ? user : null;
-    }
-
 
 
 }

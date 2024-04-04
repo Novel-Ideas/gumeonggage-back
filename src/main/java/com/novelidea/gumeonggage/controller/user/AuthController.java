@@ -24,9 +24,4 @@ public class AuthController {
 
         return ResponseEntity.created(null).body(true);
     }
-    @GetMapping("/signin") // 전화번호 조회
-    public ResponseEntity<?> signin(@RequestBody SigninReqDto signinReqDto) {
-
-        return ResponseEntity.ok(authService.signin(signinReqDto));// * true false 반환 작업 해야함
-    }
 }
