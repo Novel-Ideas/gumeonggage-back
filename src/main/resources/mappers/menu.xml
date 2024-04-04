@@ -63,12 +63,12 @@
             menu_id = #{menuId}
     </update>
 
-    <update id="completeMenuByOrderListId" parameterType="int">
+    <update id="completeMenuByOrderListId" parameterType="com.novelidea.gumeonggage.entity.OrderList">
         update
             order_list_tb
         set
             order_ok = 2
+        where
+            order_list_id = #{orderListId}
     </update>
-
-
 </mapper>
