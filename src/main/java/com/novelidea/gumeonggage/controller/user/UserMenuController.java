@@ -34,11 +34,17 @@ public class UserMenuController {
     @PostMapping("/order")
     public ResponseEntity<?> orderMenus() {
         return ResponseEntity.ok(null);
+    }
 
     @GetMapping("/order/point")
     public ResponseEntity<?> getPoint(@RequestParam String number) {
 
         return ResponseEntity.ok().body(pointService.getPointByNumber(number));
+    }
 
+    @PostMapping("/order/point")
+    public ResponseEntity<?> useOrSavePoint(@RequestParam String number) {
+        System.out.println(number);
+        return ResponseEntity.ok(null);
     }
 }
