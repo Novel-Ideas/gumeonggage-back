@@ -36,8 +36,8 @@ public class AdminMenuController {
     }
 
     @PutMapping("/menu/complete")
-    public ResponseEntity<?> completeMenu() {
-        return ResponseEntity.ok(null);
+    public ResponseEntity<?> completeMenu(@RequestParam int orderListId) {
+        return ResponseEntity.ok(adminMenuService.completeMenu(orderListId));
     }
 }
 
