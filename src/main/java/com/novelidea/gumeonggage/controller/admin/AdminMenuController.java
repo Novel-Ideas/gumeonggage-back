@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/admin")
 public class AdminMenuController {
@@ -29,8 +31,8 @@ public class AdminMenuController {
     }
 
     @DeleteMapping("/menu")
-    public ResponseEntity<?> deleteMenu() {
-        return ResponseEntity.ok(null);
+    public ResponseEntity<?> deleteMenu(@RequestParam int menuId) {
+        return ResponseEntity.ok(adminMenuService.deleteMenu(menuId));
     }
 
     @PutMapping("/menu/complete")

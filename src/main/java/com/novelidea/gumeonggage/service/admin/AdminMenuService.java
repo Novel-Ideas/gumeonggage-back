@@ -35,5 +35,10 @@ public class AdminMenuService {
         return menuMapper.updateMenuByMenuId(adminUpdateMenuReqDto.toEntity());
     }
 
+    @Transactional(rollbackFor = Exception.class)
+    public int deleteMenu(int menuId) {
+       return menuMapper.deleteMenuByMenuId(menuId);
+    }
+
 
 }

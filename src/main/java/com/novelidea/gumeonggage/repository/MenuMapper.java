@@ -12,7 +12,7 @@ public interface MenuMapper {
 
     public List<Menu> getMenu();
 
-    public int deleteMenuByMenuId(List<Integer> menuId);
+    public int deleteMenuByMenuId(int menuId);
 
     public int updateMenuByMenuId(Menu menu);
 
