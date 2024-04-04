@@ -1,5 +1,8 @@
 package com.novelidea.gumeonggage.security.handler;
 
+import com.novelidea.gumeonggage.jwt.JwtProvider;
+import com.novelidea.gumeonggage.repository.AdminMapper;
+import com.novelidea.gumeonggage.repository.UserMapper;
 import com.study.library.entity.User;
 import com.study.library.jwt.JwtProvider;
 import com.study.library.repository.UserMapper;
@@ -26,7 +29,7 @@ public class OAuth2SuccessHandler implements AuthenticationSuccessHandler {
     private JwtProvider jwtProvider;
 
     @Autowired
-    private UserMapper userMapper;
+    private AdminMapper adminMapper;
 
     @Override
     public void onAuthenticationSuccess(HttpServletRequest request, HttpServletResponse response, Authentication authentication) throws IOException, ServletException {
