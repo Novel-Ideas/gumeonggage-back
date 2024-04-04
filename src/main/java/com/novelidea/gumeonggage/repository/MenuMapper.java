@@ -10,15 +10,7 @@ import java.util.List;
 public interface MenuMapper {
     public int saveMenu(Menu menu);
 
-    public List<Menu> findMenu(
-            @Param("menuId") int menuId,
-            @Param("menuName") String menuName,
-            @Param("categoryId") int categoryId,
-            @Param("categoryName") String categoryName,
-            @Param("menuPrice") int menuPrice,
-            @Param("menuCal") int menuCal,
-            @Param("menuImgUrl") String menuImgUrl
-    );
+    public List<Menu> getMenu();
 
     public int deleteMenuByMenuId(List<Integer> menuId);
 

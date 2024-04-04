@@ -47,5 +47,6 @@ public class UserMenuController {
     public ResponseEntity<?> useOrSavePoint(@RequestBody UseOrSavePointReqDto useOrSavePointReqDto) {
         System.out.println(useOrSavePointReqDto);
         return ResponseEntity.ok().body(pointService.useOrSavePointByNumber(useOrSavePointReqDto));
+
     }
 }
