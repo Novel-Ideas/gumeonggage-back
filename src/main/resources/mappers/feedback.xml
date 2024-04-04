@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.novelidea.gumeonggage.repository.FeedbackMapper">
+    <resultMap id="FeedbackResultMap" type="com.novelidea.gumeonggage.entity.user.Feedback">
+        <result property="orderListId" column="order_list_id" />
+        <result property="answer1" column="answer1" />
+        <result property="answer2" column="answer2" />
+        <result property="answer3" column="answer3" />
+        <result property="orderTime" column="order_time" />
+        <result property="orderOkTime" column="order_ok_time" />
+    </resultMap>
+
+    <insert
+            id="saveFeedback"
+            parameterType="com.novelidea.gumeonggage.entity.user.Feedback"
+    >
+        insert into feedback_tb
+        value(0, #{orderListId}, #{answer1}, #{answer2}, #{answer3}, now(), now())
+    </insert>
+
+    <select id="findFeedback" resultMap="FeedbackResultMap">
+        select
+            olt.order_list_id,
+            olt.order_time,
+            olt.order_ok_time,
+            ft.answer1,
+            ft.answer2,
+            ft.answer3
+        from
+            order_list_tb olt
+            left outer join feedback_tb ft on (ft.order_list_id = olt.order_list_id)
+    </select>
+</mapper>
