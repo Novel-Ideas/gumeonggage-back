@@ -28,16 +28,6 @@ public class AuthService {
         return user != null ? user : null;
     }
 
-    public int usepoint(UseEarnPointReqDto useEarnPointReqDto ) {
-        User user = userMapper.useUserByPoint(useEarnPointReqDto.getPoint());
-        return useEarnPointReqDto.getPoint(); // * 리턴 문
-    }
-
-    public int savepoint(UseEarnPointReqDto useEarnPointReqDto) {
-        User user = userMapper.saveUserByPoint(useEarnPointReqDto.getPoint());
-        return (null); // * 리턴 문
-    }
-
 
 
 }

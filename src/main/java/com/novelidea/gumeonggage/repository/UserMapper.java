@@ -8,8 +8,7 @@ import org.apache.ibatis.annotations.Mapper;
 public interface UserMapper {
     public int saveUser(User user);// 유저 회원가입 - .xml
     public User findUserByPhonenumber(String phoneNumber); //유저 로그인
-    public int useUserByPoint(int point); // 유저 포인트 사용
-    public int saveUserByPoint(int point); // 유저 포인트 적립
+
 
 
 }
