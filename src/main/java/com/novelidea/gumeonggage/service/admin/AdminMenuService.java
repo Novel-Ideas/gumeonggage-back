@@ -40,5 +40,12 @@ public class AdminMenuService {
        return menuMapper.deleteMenuByMenuId(menuId);
     }
 
+    @Transactional(rollbackFor = Exception.class)
+    public int completeMenu(int orderListId) {
+        return menuMapper.completeMenuByOrderListId(orderListId);
+    }
+
+
+
 
 }

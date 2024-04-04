@@ -16,4 +16,5 @@ public interface MenuMapper {
 
     public int updateMenuByMenuId(Menu menu);
 
+    public int completeMenuByOrderListId(int orderListId);
 }

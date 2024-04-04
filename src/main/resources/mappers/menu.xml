@@ -63,6 +63,12 @@
             menu_id = #{menuId}
     </update>
 
+    <update id="completeMenuByOrderListId" parameterType="int">
+        update
+            order_list_tb
+        set
+            order_ok = 2
+    </update>
 
 
 </mapper>
