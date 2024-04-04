@@ -1,15 +1,18 @@
-package com.novelidea.gumeonggage.dto.user;
+package com.novelidea.gumeonggage.entity.user;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Data
+import java.util.List;
+
 @Builder
-@AllArgsConstructor
 @NoArgsConstructor
-public class UserPointRespDto {
+@AllArgsConstructor
+@Data
+public class User {
+    private int userId;
     private String phoneNumber;
-    private int point;
+    private List<Point> points;
 }

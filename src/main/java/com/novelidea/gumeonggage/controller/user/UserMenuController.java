@@ -1,6 +1,7 @@
 package com.novelidea.gumeonggage.controller.user;
 
 import com.novelidea.gumeonggage.dto.user.FeedbackReqDto;
+import com.novelidea.gumeonggage.dto.user.UseOrSavePointReqDto;
 import com.novelidea.gumeonggage.dto.user.UserSearchAllMenuReqDto;
 import com.novelidea.gumeonggage.service.user.FeedbackService;
 import com.novelidea.gumeonggage.service.user.PointService;
@@ -39,12 +40,12 @@ public class UserMenuController {
     @GetMapping("/order/point")
     public ResponseEntity<?> getPoint(@RequestParam String number) {
 
-        return ResponseEntity.ok().body(pointService.getPointByNumber(number));
+        return ResponseEntity.ok().body(pointService.getPointByPhoneNumber(number));
     }
 
     @PostMapping("/order/point")
-    public ResponseEntity<?> useOrSavePoint(@RequestParam String number) {
-        System.out.println(number);
-        return ResponseEntity.ok(null);
+    public ResponseEntity<?> useOrSavePoint(@RequestBody UseOrSavePointReqDto useOrSavePointReqDto) {
+        System.out.println(useOrSavePointReqDto);
+        return ResponseEntity.ok().body(pointService.useOrSavePointByNumber(useOrSavePointReqDto));
     }
 }
