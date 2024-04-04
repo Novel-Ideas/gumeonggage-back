@@ -1,8 +1,7 @@
 package com.novelidea.gumeonggage.repository;
 
-import com.novelidea.gumeonggage.entity.user.Feedback;
+import com.novelidea.gumeonggage.entity.Feedback;
 import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 

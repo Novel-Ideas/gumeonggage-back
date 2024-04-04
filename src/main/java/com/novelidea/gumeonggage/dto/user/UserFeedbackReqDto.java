@@ -1,12 +1,10 @@
 package com.novelidea.gumeonggage.dto.user;
 
-import com.novelidea.gumeonggage.entity.user.Feedback;
+import com.novelidea.gumeonggage.entity.Feedback;
 import lombok.Data;
 
-import java.time.LocalDateTime;
-
 @Data
-public class FeedbackReqDto {
+public class UserFeedbackReqDto {
     private int orderListId;
     private int answer1;
     private int answer2;

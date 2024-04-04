@@ -4,7 +4,7 @@
         "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.novelidea.gumeonggage.repository.FeedbackMapper">
-    <resultMap id="FeedbackResultMap" type="com.novelidea.gumeonggage.entity.user.Feedback">
+    <resultMap id="FeedbackResultMap" type="com.novelidea.gumeonggage.entity.Feedback">
         <result property="orderListId" column="order_list_id" />
         <result property="answer1" column="answer1" />
         <result property="answer2" column="answer2" />
@@ -15,7 +15,7 @@
 
     <insert
             id="saveFeedback"
-            parameterType="com.novelidea.gumeonggage.entity.user.Feedback"
+            parameterType="com.novelidea.gumeonggage.entity.Feedback"
     >
         insert into feedback_tb
         value(0, #{orderListId}, #{answer1}, #{answer2}, #{answer3}, now(), now())
