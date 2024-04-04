@@ -1,6 +1,8 @@
 package com.novelidea.gumeonggage.config;
 
 
+import com.novelidea.gumeonggage.security.filter.JwtAuthenticationFilter;
+import com.novelidea.gumeonggage.security.filter.PermitAllFilter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
