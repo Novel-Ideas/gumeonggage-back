@@ -1,6 +1,6 @@
 package com.novelidea.gumeonggage.jwt;
 
-import com.novelidea.gumeonggage.entity.admin.Admin;
+import com.novelidea.gumeonggage.entity.Admin;
 import com.novelidea.gumeonggage.repository.AdminMapper;
 
 import com.novelidea.gumeonggage.security.PrincipalUser;
@@ -21,7 +21,6 @@ import org.springframework.util.StringUtils;
 import java.security.Key;
 import java.util.Collection;
 import java.util.Date;
-import java.util.List;
 
 @Slf4j
 @Component

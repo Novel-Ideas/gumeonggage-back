@@ -1,7 +1,7 @@
 package com.novelidea.gumeonggage.service.admin;
 
 import com.novelidea.gumeonggage.dto.admin.EditPasswordReqDto;
-import com.novelidea.gumeonggage.entity.admin.Admin;
+import com.novelidea.gumeonggage.entity.Admin;
 import com.novelidea.gumeonggage.exception.ValidException;
 import com.novelidea.gumeonggage.repository.AdminMapper;
 import org.springframework.beans.factory.annotation.Autowired;

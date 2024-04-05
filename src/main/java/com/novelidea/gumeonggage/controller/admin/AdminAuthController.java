@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
 
 @RestController
+@RequestMapping("/admin/auth")
 public class AdminAuthController {
 
     @Autowired
@@ -34,9 +35,9 @@ public class AdminAuthController {
     }
 
 
-    @GetMapping("/admin/auth/users")
+    @GetMapping("/users")
     public ResponseEntity<?> getUserAuth() {
 
-        return ResponseEntity.ok().body(null);
+        return ResponseEntity.ok().body(adminAuthService.getAllUser());
     }
 }

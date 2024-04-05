@@ -1,4 +1,4 @@
-package com.novelidea.gumeonggage.entity.admin;
+package com.novelidea.gumeonggage.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -11,11 +11,12 @@ import java.time.LocalDate;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class Role {
+public class UserRoleRegister {
+    private int roleRegisterId;
+    private int userId;
     private int roleId;
-    private String roleName;
-    private String roleNameKor;
     private LocalDate createDate;
     private LocalDate updateDate;
 
+    private Role role;
 }

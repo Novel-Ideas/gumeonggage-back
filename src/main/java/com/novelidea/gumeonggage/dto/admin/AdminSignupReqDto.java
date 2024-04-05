@@ -1,11 +1,8 @@
 package com.novelidea.gumeonggage.dto.admin;
 
-import com.novelidea.gumeonggage.entity.admin.Admin;
+import com.novelidea.gumeonggage.entity.Admin;
 import lombok.Data;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-
-import javax.validation.constraints.Email;
-import javax.validation.constraints.Pattern;
 
 @Data
 public class AdminSignupReqDto {
