@@ -18,6 +18,7 @@ public class AuthService {
     public void signup(UserSignupReqDto userSignupReqDto){
         User user = userSignupReqDto.toEntity();
         userMapper.saveUser(user);
+        System.out.println("유저 서비스옴? ");
     }
 
 

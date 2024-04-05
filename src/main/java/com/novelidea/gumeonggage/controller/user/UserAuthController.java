@@ -18,7 +18,7 @@ public class UserAuthController {
 
     @PostMapping("/signup") // 전화번호 가입
     public ResponseEntity<?> signup(@Valid @RequestBody UserSignupReqDto userSignupReqDto, BindingResult bindingResult) {
-
+        System.out.println("유저 로그인 들어옴??");
         authService.signup(userSignupReqDto);
 
         return ResponseEntity.created(null).body(true);
