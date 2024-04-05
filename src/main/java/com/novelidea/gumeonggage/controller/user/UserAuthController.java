@@ -11,7 +11,7 @@ import javax.validation.Valid;
 
 @RestController
 @RequestMapping("/auth")//공통 상위 주소
-public class AuthController {
+public class UserAuthController {
 
     @Autowired
     private AuthService authService;
