@@ -14,7 +14,7 @@ import java.util.List;
 @Builder
 public class User {
     private int userId;
-    private String phoneNumber;
+    private String phonenumber;
     private LocalDate createDate;
     private LocalDate updateDate;
 }
