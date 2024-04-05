@@ -1,7 +1,7 @@
 package com.novelidea.gumeonggage.service.admin;
 
 import com.novelidea.gumeonggage.dto.admin.AdminSignupReqDto;
-import com.novelidea.gumeonggage.entity.admin.Admin;
+import com.novelidea.gumeonggage.entity.Admin;
 import com.novelidea.gumeonggage.exception.SaveException;
 import com.novelidea.gumeonggage.jwt.JwtProvider;
 import com.novelidea.gumeonggage.repository.AdminMapper;

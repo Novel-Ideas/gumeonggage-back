@@ -6,20 +6,20 @@
 
 <mapper namespace="com.novelidea.gumeonggage.repository.AdminMapper">
 
-    <resultMap id="RoleResultMap" type="com.novelidea.gumeonggage.entity.admin.Role">
+    <resultMap id="RoleResultMap" type="com.novelidea.gumeonggage.entity.Role">
         <id property="roleId" column="user_id" />
         <result property="roleName" column="role_name" />
         <result property="roleNameKor" column="role_name_kor" />
     </resultMap>
 
-    <resultMap id="RoleRegisterResultMap" type="com.novelidea.gumeonggage.entity.admin.RoleRegister">
-        <id property="roleRegisterId" column="role_register_id" />
-        <result property="userId" column="user_id" />
+    <resultMap id="RoleAdminRegisterResultMap" type="com.novelidea.gumeonggage.entity.AdminRoleRegister">
+        <id property="roleAdminRegisterId" column="role_admin_register_id" />
+        <result property="adminId" column="admin_id" />
         <result property="roleId" column="role_id" />
         <association property="role" resultMap="RoleResultMap" />
     </resultMap>
 
-    <resultMap id="UserResultMap" type="com.novelidea.gumeonggage.entity.admin.Admin">
+    <resultMap id="AdminResultMap" type="com.novelidea.gumeonggage.entity.Admin">
         <id property="adminId" column="admin_id" />
         <result property="adminName" column="admin_name" />
         <result property="adminPassword" column="admin_password" />
@@ -27,13 +27,27 @@
         <result property="email" column="email" />
         <result property="createDate" column="create_date" />
         <result property="updateDate" column="update_date" />
-        <collection property="roleRegisters" javaType="list" resultMap="RoleRegisterResultMap" />
+        <collection property="adminRoleRegisters" javaType="list" resultMap="RoleAdminRegisterResultMap" />
     </resultMap>
 
+    <resultMap id="RoleRegisterResultMap" type="com.novelidea.gumeonggage.entity.UserRoleRegister">
+        <id property="roleRegisterId" column="role_register_id" />
+        <result property="userId" column="user_id" />
+        <result property="roleId" column="role_id" />
+        <association property="role" resultMap="RoleResultMap" />
+    </resultMap>
 
+    <resultMap id="UserResultMap" type="com.novelidea.gumeonggage.entity.User">
+        <id property="userId" column="user_id" />
+        <result property="roleId" column="role_id" />
+        <result property="phonenumber" column="phonenumber" />
+        <result property="createDate" column="create_number" />
+        <result property="updateDate" column="update_number" />
+        <collection property="userRoleRegisters" javaType="list" resultMap="RoleRegisterResultMap" />
+    </resultMap>
 
     <insert id="saveAdmin"
-            parameterType="com.novelidea.gumeonggage.entity.admin.Admin"
+            parameterType="com.novelidea.gumeonggage.entity.Admin"
             keyProperty="adminId"
             useGeneratedKeys="true"
     >
@@ -49,7 +63,7 @@
     <select
             id="findAdminByUsername"
             parameterType="string"
-            resultMap="UserResultMap"
+            resultMap="AdminResultMap"
     >
         select
             at.admin_id,
@@ -59,19 +73,19 @@
             at.email,
             at.create_date,
             at.update_date,
-            rrt.role_register_id,
-            rrt.role_id,
+            rart.role_admin_register_id,
+            rart.role_id,
             rt.role_name,
             rt.role_name_kor
         from
             admin_tb at
-            left outer join role_register_tb rrt on(rrt.user_id = at.admin_id)
-            left outer join role_tb rt on(rt.role_id = rrt.role_id)
+            left outer join role_admin_register_tb rart on(rart.admin_id = at.admin_id)
+            left outer join role_tb rt on(rt.role_id = rart.role_id)
         where
             admin_name = #{adminName}
     </select>
 
-    <update id="modifyPassword" parameterType="com.novelidea.gumeonggage.entity.admin.Admin">
+    <update id="modifyPassword" parameterType="com.novelidea.gumeonggage.entity.Admin">
         update
             admin_tb
         set
@@ -80,4 +94,7 @@
         where
             admin_id = #{adinId}
     </update>
+
+
+
 </mapper>

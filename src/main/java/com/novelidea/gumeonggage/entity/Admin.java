@@ -1,4 +1,4 @@
-package com.novelidea.gumeonggage.entity.admin;
+package com.novelidea.gumeonggage.entity;
 
 import com.novelidea.gumeonggage.security.PrincipalUser;
 import lombok.AllArgsConstructor;
@@ -25,12 +25,12 @@ public class Admin {
     private LocalDate createDate;
     private LocalDate updateDate;
 
-    private List<RoleRegister> roleRegisters;
+    private List<AdminRoleRegister> adminRoleRegisters;
 
     public List<SimpleGrantedAuthority> getAuthorities() {
         List<SimpleGrantedAuthority> authorities = new ArrayList<>();
-        for (RoleRegister roleRegister : roleRegisters) {
-            authorities.add(new SimpleGrantedAuthority(roleRegister.getRole().getRoleName()));
+        for (AdminRoleRegister adminRoleRegister : adminRoleRegisters) {
+            authorities.add(new SimpleGrantedAuthority(adminRoleRegister.getRole().getRoleName()));
         }
         return authorities;
     }
