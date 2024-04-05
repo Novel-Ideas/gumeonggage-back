@@ -1,6 +1,6 @@
 package com.novelidea.gumeonggage.controller.user;
 
-import com.novelidea.gumeonggage.dto.user.SignupReqDto;
+import com.novelidea.gumeonggage.jwt.user.SignupReqDto;
 import com.novelidea.gumeonggage.service.user.AuthService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -11,7 +11,7 @@ import javax.validation.Valid;
 
 @RestController
 @RequestMapping("/auth")//공통 상위 주소
-public class AuthController {
+public class UserAuthController {
 
     @Autowired
     private AuthService authService;

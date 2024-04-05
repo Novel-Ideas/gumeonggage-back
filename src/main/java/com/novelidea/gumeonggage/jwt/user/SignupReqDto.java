@@ -1,4 +1,4 @@
-package com.novelidea.gumeonggage.dto.user;
+package com.novelidea.gumeonggage.jwt.user;
 
 import com.novelidea.gumeonggage.entity.User;
 import lombok.Data;
@@ -12,7 +12,7 @@ import javax.validation.constraints.Pattern;
 
     public User toEntity() {
         return User.builder()
-                .phoneNumber(phoneNumber)
+                .phonenumber(phoneNumber)
                 .build();
     }
 

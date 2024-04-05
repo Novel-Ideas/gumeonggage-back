@@ -1,6 +1,5 @@
 package com.novelidea.gumeonggage.controller.user;
 
-import com.novelidea.gumeonggage.dto.user.UseOrSavePointReqDto;
 import com.novelidea.gumeonggage.service.user.UserPointService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
