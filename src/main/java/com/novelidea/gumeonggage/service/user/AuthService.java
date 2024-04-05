@@ -1,7 +1,7 @@
 package com.novelidea.gumeonggage.service.user;
 
 
-import com.novelidea.gumeonggage.jwt.user.SignupReqDto;
+import com.novelidea.gumeonggage.dto.user.UserSignupReqDto;
 import com.novelidea.gumeonggage.entity.User;
 import com.novelidea.gumeonggage.repository.UserMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,8 +15,8 @@ public class AuthService {
     private UserMapper userMapper;
 
     @Transactional(rollbackFor = Exception.class) // 전화번호 가입
-    public void signup(SignupReqDto signupReqDto){
-        User user = signupReqDto.toEntity();
+    public void signup(UserSignupReqDto userSignupReqDto){
+        User user = userSignupReqDto.toEntity();
         userMapper.saveUser(user);
     }
 

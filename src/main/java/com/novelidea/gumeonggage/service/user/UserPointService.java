@@ -1,6 +1,6 @@
 package com.novelidea.gumeonggage.service.user;
 
-import com.novelidea.gumeonggage.dto.user.UseOrSavePointReqDto;
+import com.novelidea.gumeonggage.dto.user.UserUseOrSavePointReqDto;
 import com.novelidea.gumeonggage.entity.User;
 import com.novelidea.gumeonggage.repository.PointMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,13 +16,13 @@ public class UserPointService {
         return pointMapper.getPoint(phonenumber);
     }
 
-    public int useOrSavePointByNumber(UseOrSavePointReqDto useOrSavePointReqDto) {
-        User user = pointMapper.findUser(useOrSavePointReqDto.getPhoneNumber());
+    public int useOrSavePointByNumber(UserUseOrSavePointReqDto UserUseOrSavePointReqDto) {
+        User user = pointMapper.findUser(UserUseOrSavePointReqDto.getPhoneNumber());
         if(user != null) {
             return pointMapper.useOrSavePoint(
                     user.getUserId(),
-                    useOrSavePointReqDto.getPoint(),
-                    useOrSavePointReqDto.getOrderListId());
+                    UserUseOrSavePointReqDto.getPoint(),
+                    UserUseOrSavePointReqDto.getOrderListId());
         }
 
         return 0;
