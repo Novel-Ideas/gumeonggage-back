@@ -38,6 +38,6 @@ public class AdminAuthController {
     @GetMapping("/users")
     public ResponseEntity<?> getUserAuth() {
 
-        return ResponseEntity.ok().body(null);
+        return ResponseEntity.ok().body(adminAuthService.getAllUser());
     }
 }

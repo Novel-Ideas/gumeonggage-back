@@ -15,6 +15,7 @@ import java.util.List;
 public class User {
     private int userId;
     private int roleId;
+    private String roleNameKor;
     private String phonenumber;
     private LocalDate createDate;
     private LocalDate updateDate;
