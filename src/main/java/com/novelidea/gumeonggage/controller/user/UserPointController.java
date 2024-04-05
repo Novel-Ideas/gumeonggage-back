@@ -1,5 +1,6 @@
 package com.novelidea.gumeonggage.controller.user;
 
+import com.novelidea.gumeonggage.dto.user.UserOrderMenusReqDto;
 import com.novelidea.gumeonggage.service.user.UserPointService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -10,6 +11,7 @@ public class UserPointController {
 
     @Autowired
     private UserPointService userPointService;
+
 
     @GetMapping("/point")
     public ResponseEntity<?> getPoint(@RequestParam String phonenumber) {
