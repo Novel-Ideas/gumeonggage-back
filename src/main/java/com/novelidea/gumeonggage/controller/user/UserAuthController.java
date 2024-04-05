@@ -1,6 +1,6 @@
 package com.novelidea.gumeonggage.controller.user;
 
-import com.novelidea.gumeonggage.jwt.user.SignupReqDto;
+import com.novelidea.gumeonggage.dto.user.UserSignupReqDto;
 import com.novelidea.gumeonggage.service.user.AuthService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -17,9 +17,9 @@ public class UserAuthController {
     private AuthService authService;
 
     @PostMapping("/signup") // 전화번호 가입
-    public ResponseEntity<?> signup(@Valid @RequestBody SignupReqDto signupReqDto, BindingResult bindingResult) {
-
-        authService.signup(signupReqDto);
+    public ResponseEntity<?> signup(@Valid @RequestBody UserSignupReqDto userSignupReqDto, BindingResult bindingResult) {
+        System.out.println("유저 로그인 들어옴??");
+        authService.signup(userSignupReqDto);
 
         return ResponseEntity.created(null).body(true);
     }

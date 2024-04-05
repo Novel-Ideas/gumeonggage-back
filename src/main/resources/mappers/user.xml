@@ -14,7 +14,7 @@
                 useGeneratedKeys="true"
         >
             insert into user_tb
-            values(0, #{phoneNumber}, now(), now())
+            values(0,2,#{phonenumber}, now(), now())
         </insert>
 
     </mapper>

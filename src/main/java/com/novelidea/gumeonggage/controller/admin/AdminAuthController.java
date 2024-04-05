@@ -33,11 +33,6 @@ public class AdminAuthController {
         return ResponseEntity.ok(adminAuthService.adminSignin(adminSignupReqDto));
     }
 
-    @PutMapping("/admin/auth/edit/password")
-    public ResponseEntity<?> adminAuthEditPassword() {
-
-        return ResponseEntity.ok().body(null);
-    }
 
     @GetMapping("/admin/auth/users")
     public ResponseEntity<?> getUserAuth() {

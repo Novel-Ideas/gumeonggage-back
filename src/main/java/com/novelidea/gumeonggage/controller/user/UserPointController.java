@@ -1,6 +1,7 @@
 package com.novelidea.gumeonggage.controller.user;
 
 import com.novelidea.gumeonggage.dto.user.UserOrderMenusReqDto;
+import com.novelidea.gumeonggage.dto.user.UserUseOrSavePointReqDto;
 import com.novelidea.gumeonggage.service.user.UserPointService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -20,8 +21,8 @@ public class UserPointController {
     }
 
     @PostMapping("/point")
-    public ResponseEntity<?> useOrSavePoint(@RequestBody UseOrSavePointReqDto useOrSavePointReqDto) {
-        System.out.println(useOrSavePointReqDto);
-        return ResponseEntity.ok().body(userPointService.useOrSavePointByNumber(useOrSavePointReqDto));
+    public ResponseEntity<?> useOrSavePoint(@RequestBody UserUseOrSavePointReqDto userUseOrSavePointReqDto) {
+        System.out.println(userUseOrSavePointReqDto);
+        return ResponseEntity.ok().body(userPointService.useOrSavePointByNumber(userUseOrSavePointReqDto));
     }
 }
