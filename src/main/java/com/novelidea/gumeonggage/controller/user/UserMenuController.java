@@ -22,4 +22,9 @@ public class UserMenuController {
         return ResponseEntity.ok().body(userMenuService.getBurgerMenu());
     }
 
+    @GetMapping("/menus/drink")
+    public ResponseEntity<?> getDrinkMenu() {
+        return ResponseEntity.ok().body(userMenuService.getDrinkMenu());
+    }
+
 }

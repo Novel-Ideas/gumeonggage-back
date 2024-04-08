@@ -16,4 +16,6 @@ public interface MenuMapper {
     public int updateMenuByMenuId(Menu menu);
 
     public List<Menu> getBurger();
+
+    public List<Menu> getDrink();
 }
