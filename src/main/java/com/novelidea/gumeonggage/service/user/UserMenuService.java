@@ -23,5 +23,12 @@ public class UserMenuService {
         return menuMapper.getMenus();
     }
 
+    public List<Menu> getBurgerMenu() {
+        return menuMapper.getBurger();
+    }
+
+
+
+
 
 }
