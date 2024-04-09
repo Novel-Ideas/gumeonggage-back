@@ -4,6 +4,21 @@
         "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.novelidea.gumeonggage.repository.OrderMapper">
+
+    <resultMap id="OrderResultMap" type="com.novelidea.gumeonggage.entity.Order">
+        <id property="orderId" column="order_id"/>
+        <result property="orderListId" column="oder_list_id"/>
+        <result property="menuId" column="menu_id"/>
+        <result property="menuCount" column="menu_count" />
+        <association property="menu" resultMap="MenuResultMap" />
+    </resultMap>
+
+    <resultMap id="MenuResultMap" type="com.novelidea.gumeonggage.entity.Menu">
+        <id property="menuId" column="menu_id" />
+        <result property="menuName" column="menu_name" />
+    </resultMap>
+<!---->
+
     <insert id="addOrderList"
             useGeneratedKeys="true"
             keyProperty="orderListId"
@@ -35,4 +50,17 @@
         where
         order_list_id = #{orderListId}
     </update>
+
+    <select id="getRanking" resultMap="OrderResultMap">
+        select
+            ot.menu_id,
+            mt.menu_name
+        from
+            order_tb ot
+            left outer join menu_tb mt on(mt.menu_id = ot.menu_id)
+        order by
+            menu_count
+        limit 3;
+    </select>
+
 </mapper>

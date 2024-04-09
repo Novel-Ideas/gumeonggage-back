@@ -15,7 +15,7 @@ public class PermitAllFilter extends GenericFilter {
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
         HttpServletRequest request = (HttpServletRequest) servletRequest;
         HttpServletResponse response = (HttpServletResponse) servletResponse;
-
+      
         List<String> antMatchers = List.of("/login", "/error", "/server", "/auth","/admin/auth", "/menus");
 
         String uri = request.getRequestURI();
