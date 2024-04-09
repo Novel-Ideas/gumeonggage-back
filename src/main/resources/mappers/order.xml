@@ -53,14 +53,18 @@
 
     <select id="getRanking" resultMap="OrderResultMap">
         select
-            ot.menu_id,
-            mt.menu_name
+            mt.menu_id,
+            mt.menu_name,
+            sum(ot.menu_count) as total_count
         from
             order_tb ot
-            left outer join menu_tb mt on(mt.menu_id = ot.menu_id)
+            left outer join menu_tb mt on(ot.menu_id = mt.menu_id)
+            left outer join order_list_tb olt on(ot.order_list_id = olt.order_list_id)
+        group by
+            menu_id
         order by
-            menu_count
-        limit 3;
+            total_count desc
+            limit 0, 3;
     </select>
 
 </mapper>
