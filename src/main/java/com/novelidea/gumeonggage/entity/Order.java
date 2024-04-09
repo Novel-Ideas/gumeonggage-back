@@ -15,4 +15,5 @@ public class Order {
     private int menuId;
     private int menuCount;
 
+    private Menu menu;
 }
