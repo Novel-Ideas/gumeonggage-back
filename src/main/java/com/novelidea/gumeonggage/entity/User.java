@@ -20,7 +20,5 @@ public class User {
     private LocalDate createDate;
     private LocalDate updateDate;
 
-    private Point point;
-
     private List<UserRoleRegister> userRoleRegisters;
 }
