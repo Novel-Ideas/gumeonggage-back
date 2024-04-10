@@ -6,8 +6,8 @@
 <mapper namespace="com.novelidea.gumeonggage.repository.PointMapper">
     <resultMap id="UserResultMap" type="com.novelidea.gumeonggage.entity.User">
         <id property="userId" column="user_id" />
-        <result property="phoneNumber" column="phonenumber" />
-        <collection property="points" javaType="list" resultMap="PointResultMap" />
+        <result property="phonenumber" column="phonenumber" />
+        <collection property="point" javaType="list" resultMap="PointResultMap" />
     </resultMap>
     <resultMap id="PointResultMap" type="com.novelidea.gumeonggage.entity.Point">
         <id property="pointId" column="point_id"/>
