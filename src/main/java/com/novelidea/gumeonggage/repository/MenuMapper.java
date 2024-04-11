@@ -1,5 +1,6 @@
 package com.novelidea.gumeonggage.repository;
 
+import com.novelidea.gumeonggage.entity.Category;
 import com.novelidea.gumeonggage.entity.Menu;
 import com.novelidea.gumeonggage.entity.Order;
 import org.apache.ibatis.annotations.Mapper;
@@ -19,5 +20,7 @@ public interface MenuMapper {
     public List<Menu> getBurger();
 
     public List<Menu> getDrink();
+
+    public List<Category> getCategory();
 
 }
