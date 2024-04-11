@@ -13,8 +13,8 @@ public class AdminSalesController {
     private AdminSalesService adminSalesService;
 
     @GetMapping("/sales")
-    public ResponseEntity<?> getSales(@RequestParam String month) {
-
-        return ResponseEntity.ok().body(adminSalesService.getSalesByMonth(month));
+    public ResponseEntity<?> getSales() {
+        System.out.println("요청");
+        return ResponseEntity.ok().body(adminSalesService.getSales());
     }
 }
