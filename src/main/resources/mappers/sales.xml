@@ -18,8 +18,6 @@
             (select count(distinct order_list_id) from m_sales) as order_count
         from
             m_sales
-        where
-            DATE_FORMAT(order_time,'%m') = #{month}
         group by
             month;
     </select>
