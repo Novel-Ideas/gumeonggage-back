@@ -100,7 +100,7 @@
             admin_password = #{adminPassword},
             update_date = now()
         where
-            admin_id = #{adinId}
+            admin_id = #{adminId}
     </update>
 
     <select id="getUserAuth" resultMap="UserAuthResultMap">
