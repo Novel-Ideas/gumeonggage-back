@@ -17,6 +17,12 @@
         <result property="categoryNameKor" column="category_name_kor" />
     </resultMap>
 
+    <resultMap id="CategoryResultMap" type="com.novelidea.gumeonggage.entity.Category">
+        <id property="categoryId" column="category_id" />
+        <result property="categoryName" column="category_name" />
+        <result property="categoryNameKor" column="category_name_kor" />
+    </resultMap>
+
     <insert id="saveMenu" parameterType="com.novelidea.gumeonggage.entity.Menu">
         insert into menu_tb
         values(
@@ -97,6 +103,14 @@
             left outer join category_tb ct on(ct.category_id = mt.category_id)
         where
         mt.category_id = 3
+    </select>
+
+    <select id="getCategory" resultMap="CategoryResultMap">
+        select
+            *
+        from
+            category_tb
+        limit 1, 2
     </select>
 
 </mapper>

@@ -27,4 +27,9 @@ public class UserMenuController {
         return ResponseEntity.ok().body(userMenuService.getDrinkMenu());
     }
 
+    @GetMapping("/menus/category")
+    public ResponseEntity<?> getCategory() {
+        return ResponseEntity.ok().body(userMenuService.getCategory());
+    }
+
 }

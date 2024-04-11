@@ -1,6 +1,7 @@
 package com.novelidea.gumeonggage.service.user;
 
 import com.novelidea.gumeonggage.dto.user.UserOrderMenusReqDto;
+import com.novelidea.gumeonggage.entity.Category;
 import com.novelidea.gumeonggage.entity.Menu;
 import com.novelidea.gumeonggage.entity.Order;
 import com.novelidea.gumeonggage.entity.OrderList;
@@ -31,7 +32,9 @@ public class UserMenuService {
         return menuMapper.getDrink();
     }
 
-
+    public List<Category> getCategory() {
+        return menuMapper.getCategory();
+    }
 
 
 
