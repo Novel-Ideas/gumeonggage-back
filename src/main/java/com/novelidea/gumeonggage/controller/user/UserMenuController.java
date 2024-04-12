@@ -13,18 +13,8 @@ public class UserMenuController {
     private UserMenuService userMenuService;
   
     @GetMapping("/menus")
-    public ResponseEntity<?> getAllMenu() {
-        return ResponseEntity.ok().body(userMenuService.getAllMenu());
-    }
-
-    @GetMapping("/menus/burger")
-    public ResponseEntity<?> getBurgerMenu() {
-        return ResponseEntity.ok().body(userMenuService.getBurgerMenu());
-    }
-
-    @GetMapping("/menus/drink")
-    public ResponseEntity<?> getDrinkMenu() {
-        return ResponseEntity.ok().body(userMenuService.getDrinkMenu());
+    public ResponseEntity<?> getAllMenu(@RequestParam int categoryId) {
+        return ResponseEntity.ok().body(userMenuService.getAllMenu(categoryId));
     }
 
     @GetMapping("/menus/category")
