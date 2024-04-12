@@ -20,16 +20,14 @@ public class UserMenuService {
     @Autowired
     private MenuMapper menuMapper;
 
-    public List<Menu> getAllMenu() {
+    public List<Menu> getAllMenu(int categoryId) {
+        if(categoryId == 2) {
+            return menuMapper.getBurger();
+        } else if (categoryId == 3) {
+            return menuMapper.getDrink();
+        }
+
         return menuMapper.getMenus();
-    }
-
-    public List<Menu> getBurgerMenu() {
-        return menuMapper.getBurger();
-    }
-
-    public List<Menu> getDrinkMenu() {
-        return menuMapper.getDrink();
     }
 
     public List<Category> getCategory() {
