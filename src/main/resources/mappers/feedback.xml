@@ -5,12 +5,11 @@
 
 <mapper namespace="com.novelidea.gumeonggage.repository.FeedbackMapper">
     <resultMap id="FeedbackResultMap" type="com.novelidea.gumeonggage.entity.Feedback">
-        <result property="orderListId" column="order_list_id" />
+        <id property="feedbackId" column="feedback_id" />
         <result property="answer1" column="answer1" />
         <result property="answer2" column="answer2" />
         <result property="answer3" column="answer3" />
-        <result property="orderTime" column="order_time" />
-        <result property="orderOkTime" column="order_ok_time" />
+        <result property="createDate" column="create_date" />
     </resultMap>
 
     <insert
@@ -23,14 +22,12 @@
 
     <select id="findFeedback" resultMap="FeedbackResultMap">
         select
-            olt.order_list_id,
-            olt.order_time,
-            olt.order_ok_time,
-            ft.answer1,
-            ft.answer2,
-            ft.answer3
+            feedback_id,
+            answer1,
+            answer2,
+            answer3,
+            create_date
         from
-            order_list_tb olt
-            left outer join feedback_tb ft on (ft.order_list_id = olt.order_list_id)
+            feedback_tb
     </select>
 </mapper>
