@@ -17,4 +17,9 @@ public class AdminFeedbackController {
     public ResponseEntity<?> adminOrderFeedback() {
         return ResponseEntity.ok().body(adminFeedbackService.findFeedbacks());
     }
+
+    @GetMapping("/admin/feedback/answercount")
+    public ResponseEntity<?> adminFeedbackCount() {
+        return ResponseEntity.ok().body(adminFeedbackService.feedbackCount());
+    }
 }

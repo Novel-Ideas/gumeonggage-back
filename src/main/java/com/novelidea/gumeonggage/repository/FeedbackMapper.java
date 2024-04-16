@@ -9,4 +9,5 @@ import java.util.List;
 public interface FeedbackMapper {
     public int saveFeedback(Feedback feedback);
     public List<Feedback> findFeedback();
+    public List<Feedback> feedbackCount();
 }
