@@ -26,7 +26,7 @@
             parameterType="com.novelidea.gumeonggage.entity.Feedback"
     >
         insert into feedback_tb
-        value(0, #{orderListId}, #{answer1}, #{answer2}, #{answer3}, now(), now())
+        value(0, #{answer1}, #{answer2}, #{answer3}, now(), now())
     </insert>
 
     <select id="findFeedback" resultMap="FeedbackResultMap">
