@@ -1,5 +1,6 @@
 package com.novelidea.gumeonggage.entity;
 
+import com.novelidea.gumeonggage.entity.OAuth2.OAuth2;
 import com.novelidea.gumeonggage.security.PrincipalUser;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -26,6 +27,7 @@ public class Admin {
     private LocalDate updateDate;
 
     private List<AdminRoleRegister> adminRoleRegisters;
+    private List<OAuth2> oAuth2s;
 
     public List<SimpleGrantedAuthority> getAuthorities() {
         List<SimpleGrantedAuthority> authorities = new ArrayList<>();
