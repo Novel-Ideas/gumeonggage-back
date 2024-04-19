@@ -59,6 +59,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                         "/point",
                         "/admin/sales/**",
                         "/order",
+                        "/feedback/add",
                         "/admin/feedback/answer",
                         "/admin/feedback/answercount")
                 .permitAll()
@@ -77,5 +78,4 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .userInfoEndpoint()
                 .userService(oAuth2PrincipalUserService);
     }
-
 }
