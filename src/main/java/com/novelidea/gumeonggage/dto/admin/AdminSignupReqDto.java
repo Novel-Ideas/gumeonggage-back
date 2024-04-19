@@ -1,10 +1,12 @@
 package com.novelidea.gumeonggage.dto.admin;
 
 import com.novelidea.gumeonggage.entity.Admin;
+import com.novelidea.gumeonggage.entity.OAuth2.OAuth2;
 import lombok.Data;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 import javax.validation.constraints.Email;
+import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Pattern;
 
 @Data
