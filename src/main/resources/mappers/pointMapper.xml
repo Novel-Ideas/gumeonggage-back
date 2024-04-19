@@ -14,7 +14,6 @@
         <id property="pointId" column="point_id"/>
         <result property="userId" column="user_id"/>
         <result property="point" column="point"/>
-        <result property="orderListId" column="order_list_id"/>
     </resultMap>
 
     <select id="getPoint" resultType="int">
@@ -40,6 +39,6 @@
     <insert id="useOrSavePoint">
         insert into
             point_tb
-        values(0, #{userId}, #{point}, #{orderListId})
+        values(0, #{userId}, #{point})
     </insert>
 </mapper>

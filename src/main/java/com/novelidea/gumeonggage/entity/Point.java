@@ -13,5 +13,4 @@ public class Point {
     private int pointId;
     private int userId;
     private int point;
-    private int orderListId;
 }

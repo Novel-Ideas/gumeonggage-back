@@ -12,5 +12,4 @@ import lombok.NoArgsConstructor;
 public class UserUseOrSavePointReqDto {
     private String phoneNumber;
     private int point;
-    private int orderListId;
 }
