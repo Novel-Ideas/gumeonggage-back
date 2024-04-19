@@ -10,6 +10,5 @@ public interface PointMapper {
     public int getPoint(String phonenumber);
     public int useOrSavePoint(
             @Param("userId") int userId,
-            @Param("point") int point,
-            @Param("orderListId") int orderListId);
+            @Param("point") int point);
 }

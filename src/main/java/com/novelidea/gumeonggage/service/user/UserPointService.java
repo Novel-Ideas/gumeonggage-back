@@ -21,8 +21,7 @@ public class UserPointService {
         if(user != null) {
             return pointMapper.useOrSavePoint(
                     user.getUserId(),
-                    UserUseOrSavePointReqDto.getPoint(),
-                    UserUseOrSavePointReqDto.getOrderListId());
+                    UserUseOrSavePointReqDto.getPoint());
         }
 
         return 0;
