@@ -1,5 +1,6 @@
 package com.novelidea.gumeonggage.controller.admin;
 
+import com.novelidea.gumeonggage.aop.annotation.ValidAspect;
 import com.novelidea.gumeonggage.dto.admin.AdminSignupReqDto;
 import com.novelidea.gumeonggage.dto.admin.OAuth2.OAuth2MergeReqDto;
 import com.novelidea.gumeonggage.dto.admin.OAuth2.OAuth2SignupReqDto;
@@ -20,6 +21,8 @@ public class AdminAuthController {
     AdminAuthService adminAuthService;
     @Autowired
     OAuth2Service oAuth2Service;
+
+    @ValidAspect
     @PostMapping("/signup")
     public ResponseEntity<?> adminSignup(@Valid @RequestBody AdminSignupReqDto adminSignupReqDto, BindingResult bindingResult) {
         System.out.println("컨트롤러 진입");
@@ -27,7 +30,7 @@ public class AdminAuthController {
         System.out.println("컨트롤러 진입 끝");
         return ResponseEntity.created(null).body(true);
     }
-    @Valid
+    @ValidAspect
     @PostMapping("/oauth2/signup")
     public ResponseEntity<?> oAuth2Signup(@Valid @RequestBody OAuth2SignupReqDto oAuth2SignupReqDto, BindingResult bindingResult) {
         oAuth2Service.oAuth2Signup(oAuth2SignupReqDto);
