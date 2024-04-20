@@ -16,7 +16,7 @@
         <result property="point" column="point"/>
     </resultMap>
 
-    <select id="getPoint" resultType="int">
+    <select id="getPoint" resultType="integer">
         select
             sum(point) as point
         from

@@ -13,7 +13,11 @@ public class UserPointService {
     private PointMapper pointMapper;
 
     public int getPointByPhoneNumber(String phonenumber) {
-        return pointMapper.getPoint(phonenumber);
+        Integer success = pointMapper.getPoint((phonenumber));
+        if(success == null){
+            return 0;
+        }
+        return success;
     }
 
     public int useOrSavePointByNumber(UserUseOrSavePointReqDto UserUseOrSavePointReqDto) {
