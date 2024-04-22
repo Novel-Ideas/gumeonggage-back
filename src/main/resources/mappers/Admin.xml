@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<!--0314-5-->
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
@@ -114,6 +113,8 @@
 
     <select id="getUserAuth" resultMap="UserAuthResultMap">
         select
+            sum(point) as total_point,
+            pt.point,
             ut.user_id,
             rt.role_name_kor,
             ut.phonenumber,
@@ -121,7 +122,10 @@
             ut.update_date
         from
             user_tb ut
-            left outer join role_tb rt on(rt.role_id = ut.role_id);
+            left outer join role_tb rt on(rt.role_id = ut.role_id)
+            left outer join point_tb pt on(pt.user_id = ut.user_id)
+        group by
+            user_id
     </select>
 
     <insert id="saveOAuth2" parameterType="com.novelidea.gumeonggage.entity.OAuth2.OAuth2">
