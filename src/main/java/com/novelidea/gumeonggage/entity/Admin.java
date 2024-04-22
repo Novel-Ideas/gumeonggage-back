@@ -23,6 +23,7 @@ public class Admin {
     private String adminPassword;
     private String name;
     private String email;
+    private String imgUrl;
     private LocalDate createDate;
     private LocalDate updateDate;
 
@@ -43,6 +44,7 @@ public class Admin {
                 .username(adminName)
                 .name(name)
                 .email(email)
+                .imgUrl(imgUrl)
                 .authorities(getAuthorities())
                 .build();
     }
