@@ -32,6 +32,7 @@
         <result property="adminPassword" column="admin_password" />
         <result property="name" column="name" />
         <result property="email" column="email" />
+        <result property="imgUrl" column="img_url" />
         <result property="createDate" column="create_date" />
         <result property="updateDate" column="update_date" />
         <collection property="adminRoleRegisters" javaType="list" resultMap="RoleAdminRegisterResultMap" />
@@ -88,6 +89,7 @@
             at.admin_password,
             at.name,
             at.email,
+            at.img_url,
             at.create_date,
             at.update_date,
             rart.role_admin_register_id,
@@ -153,4 +155,15 @@
         where
             oat.oauth2_name = #{oAuth2Name}
     </select>
+
+    <update id="updateLogo" parameterType="com.novelidea.gumeonggage.entity.Admin">
+        update
+            admin_tb
+        set
+            img_url = #{imgUrl},
+            update_date = now()
+        where
+            admin_id = #{adminId}
+    </update>
+
 </mapper>

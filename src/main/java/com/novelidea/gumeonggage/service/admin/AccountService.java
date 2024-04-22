@@ -1,5 +1,6 @@
 package com.novelidea.gumeonggage.service.admin;
 
+import com.novelidea.gumeonggage.dto.admin.AdminLogoReqDto;
 import com.novelidea.gumeonggage.dto.admin.EditPasswordReqDto;
 import com.novelidea.gumeonggage.entity.Admin;
 import com.novelidea.gumeonggage.exception.ValidException;
@@ -36,4 +37,13 @@ public class AccountService {
         admin.setAdminPassword(passwordEncoder.encode(editPasswordReqDto.getNewPassword()));
         adminMapper.modifyPassword(admin);
     }
+
+    public void updateLogo(AdminLogoReqDto adminLogoReqDto) {
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        Admin admin = adminMapper.findAdminByUsername(authentication.getName());
+        System.out.println(admin);
+        admin.setImgUrl(adminLogoReqDto.getImgUrl());
+        adminMapper.updateLogo(admin);
+    }
+
 }
