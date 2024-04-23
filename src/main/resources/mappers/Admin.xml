@@ -36,7 +36,6 @@
         <result property="updateDate" column="update_date" />
         <collection property="adminRoleRegisters" javaType="list" resultMap="RoleAdminRegisterResultMap" />
         <collection property="oAuth2s" javaType="list" resultMap="OAuth2ResultMap" />
-
     </resultMap>
 
     <resultMap id="RoleRegisterResultMap" type="com.novelidea.gumeonggage.entity.UserRoleRegister">
@@ -59,6 +58,7 @@
         <id property="userId" column="user_id" />
         <result property="roleNameKor" column="role_name_kor" />
         <result property="phonenumber" column="phonenumber" />
+        <result property="totalPoint" column="total_point" />
         <result property="createDate" column="create_date" />
         <result property="updateDate" column="update_date" />
     </resultMap>
@@ -115,11 +115,10 @@
 
     <select id="getUserAuth" resultMap="UserAuthResultMap">
         select
-            sum(point) as total_point,
-            pt.point,
             ut.user_id,
             rt.role_name_kor,
             ut.phonenumber,
+            sum(point) as total_point,
             ut.create_date,
             ut.update_date
         from
