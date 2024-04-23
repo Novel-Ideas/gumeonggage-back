@@ -15,7 +15,7 @@ public interface AdminMapper {
     public int saveRole(@Param("adminId") int adminId, @Param("roleId") int roleId);
     public int modifyPassword(Admin admin);
     public int saveOAuth2(OAuth2 oAuth2);
-    public Admin findAdminByOauth2name(String oAuth2name);
+    public Admin findAdminByOAuth2name(String oAuth2name);
     public List<User> getUserAuth();
     public int updateLogo(Admin admin);
 }

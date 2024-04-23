@@ -52,7 +52,6 @@ spring:
             userInfoUri: https://openapi.naver.com/v1/nid/me
             userNameAttribute: response
           kakao:
-
             authorizationUri: https://kauth.kakao.com/oauth/authorize
             tokenUri: https://kauth.kakao.com/oauth/token
             userInfoUri: https://kapi.kakao.com/v2/user/me

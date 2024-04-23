@@ -29,20 +29,22 @@ public class OAuth2SuccessHandler implements AuthenticationSuccessHandler {
 
     @Override
     public void onAuthenticationSuccess(HttpServletRequest request, HttpServletResponse response, Authentication authentication) throws IOException, ServletException {
-
+        System.out.println("여기야 여기" + authentication);
         String name = authentication.getName();
-        Admin admin = adminMapper.findAdminByOauth2name(name);
+        Admin admin = adminMapper.findAdminByOAuth2name(name);
+        System.out.println("admin:" + admin);
 
         if(admin == null ) {
+            System.out.println("여기로 와라랏");
             DefaultOAuth2User oAuth2User= (DefaultOAuth2User) authentication.getPrincipal();
             String providerName = oAuth2User.getAttribute("provider").toString();
 
-            response.sendRedirect("http://" + clientAddress + "/admin/auth/oauth2?name=" + name + "&provider=" + providerName);
+            response.sendRedirect("http://" + clientAddress + "/oauth2?name=" + name + "&provider=" + providerName);
             return;
         }
 
         String accessToken = jwtProvider.generateToken(admin);
-        response.sendRedirect("http://" + clientAddress + "/admin/auth/oauth2/signin?accessToken=" +accessToken);
+        response.sendRedirect("http://" + clientAddress + "/oauth2/signin?accessToken=" +accessToken);
 
     }
 }
