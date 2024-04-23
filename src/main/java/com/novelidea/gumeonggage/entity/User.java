@@ -17,6 +17,7 @@ public class User {
     private int roleId;
     private String roleNameKor;
     private String phonenumber;
+    private int totalPoint;
     private LocalDate createDate;
     private LocalDate updateDate;
 

@@ -4,19 +4,16 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-    <mapper namespace="com.novelidea.gumeonggage.repository.UserMapper">
+<mapper namespace="com.novelidea.gumeonggage.repository.UserMapper">
+    <insert id="saveUser"
+            parameterType="com.novelidea.gumeonggage.entity.User"
+            keyProperty="userId"
+            useGeneratedKeys="true"
+    >
+        insert into user_tb
+        values(0,2,#{phonenumber}, now(), now())
+    </insert>
 
-
-<!-- resultMap 은 조회용 어차피 insert데이터는 그냥 그모양대로 컬럼 순서대로 들어간다-->
-        <insert id="saveUser"
-                parameterType="com.novelidea.gumeonggage.entity.User"
-                keyProperty="userId"
-                useGeneratedKeys="true"
-        >
-            insert into user_tb
-            values(0,2,#{phonenumber}, now(), now())
-        </insert>
-
-    </mapper>
+</mapper>
 
 
