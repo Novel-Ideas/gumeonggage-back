@@ -62,10 +62,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                         "/feedback/add",
                         "/admin/feedback/answer",
                         "/admin/feedback/answercount",
-                        "/oauth2/authorization/**"
+                        "/oauth2/**"
                 )
                 .permitAll()
-                .antMatchers("/admin/account/**", "/admin/menu/**", "/admin/menus/**", "/admin/order/**")
+                .antMatchers("/admin/menu/**", "/admin/menus/**", "/admin/order/**")
                 .hasRole("ADMIN")
                 .anyRequest()
                 .authenticated()

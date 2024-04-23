@@ -61,7 +61,7 @@ public class ValidAop {
                     oAuth2SignupReqDto  = (OAuth2SignupReqDto) arg;
                 }
             }
-            if(adminMapper.findAdminByOauth2name(oAuth2SignupReqDto.getUsername()) != null) {
+            if(adminMapper.findAdminByOAuth2name(oAuth2SignupReqDto.getUsername()) != null) {
                 ObjectError objectError = new FieldError("username", "username", "이미 존재하는 사용자이름입니다");
                 bindingResult.addError(objectError);
             }

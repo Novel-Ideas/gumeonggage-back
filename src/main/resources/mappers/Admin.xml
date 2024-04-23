@@ -69,7 +69,7 @@
             useGeneratedKeys="true"
     >
         insert into admin_tb
-        values(0, #{adminName}, #{adminPassword}, #{name}, #{email}, now(), now())
+        values(0, #{adminName}, #{adminPassword}, #{name}, #{email}, "img", now(), now())
     </insert>
 
     <insert id="saveRole" parameterType="integer">
@@ -132,7 +132,7 @@
 
     <insert id="saveOAuth2" parameterType="com.novelidea.gumeonggage.entity.OAuth2.OAuth2">
         insert into oauth2_tb
-        values(0, #{oAuth2Name}, #{userId}, #{providerName}, now(), now())
+        values(0, #{oAuth2Name}, #{adminId}, #{providerName}, now(), now())
     </insert>
 
     <select id="findAdminByOAuth2name" resultMap="AdminResultMap">
@@ -155,7 +155,7 @@
             admin_tb at
             left outer join role_admin_register_tb rart on(rart.admin_id = at.admin_id)
             left outer join role_tb rt on(rt.role_id = rart.role_id)
-            left outer join oauth2_tb oat on(oat.user_id = ut.user_id)
+            left outer join oauth2_tb oat on(oat.admin_id = at.admin_id)
         where
             oat.oauth2_name = #{oAuth2Name}
     </select>
