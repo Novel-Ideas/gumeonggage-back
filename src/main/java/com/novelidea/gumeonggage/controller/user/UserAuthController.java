@@ -23,4 +23,10 @@ public class UserAuthController {
 
         return ResponseEntity.created(null).body(true);
     }
+
+    @DeleteMapping("/user/{userId}")
+    public ResponseEntity<?> delete(@PathVariable int userId) {
+        authService.delete(userId);
+        return ResponseEntity.ok(null);
+    }
 }

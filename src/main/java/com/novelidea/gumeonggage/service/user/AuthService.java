@@ -21,6 +21,11 @@ public class AuthService {
         System.out.println("유저 서비스옴? ");
     }
 
+    @Transactional(rollbackFor = Exception.class)
+    public void delete(int userId) {
+        userMapper.deleteUser(userId);
+    }
+
 
 
 }
