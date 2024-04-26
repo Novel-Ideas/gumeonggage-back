@@ -17,4 +17,10 @@ public class AdminSalesController {
         System.out.println("요청");
         return ResponseEntity.ok().body(adminSalesService.getSales());
     }
+
+    @GetMapping("/menusales")
+    public ResponseEntity<?> getSalesByMenu() {
+        return ResponseEntity.ok(adminSalesService.getSalesByMenu());
+    }
+
 }

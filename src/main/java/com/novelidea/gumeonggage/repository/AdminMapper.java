@@ -1,6 +1,7 @@
 package com.novelidea.gumeonggage.repository;
 
 import com.novelidea.gumeonggage.entity.OAuth2.OAuth2;
+import com.novelidea.gumeonggage.entity.Sales;
 import com.novelidea.gumeonggage.entity.User;
 import com.novelidea.gumeonggage.entity.Admin;
 import org.apache.ibatis.annotations.Mapper;
