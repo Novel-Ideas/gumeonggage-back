@@ -1,12 +1,13 @@
 package com.novelidea.gumeonggage.service.admin;
 
 import com.novelidea.gumeonggage.dto.admin.AdminRegisterMenuReqDto;
-import com.novelidea.gumeonggage.dto.admin.AdminSearchMenuReqDto;
 import com.novelidea.gumeonggage.dto.admin.AdminSearchMenuRespDto;
 import com.novelidea.gumeonggage.dto.admin.AdminUpdateMenuReqDto;
 import com.novelidea.gumeonggage.entity.Menu;
+import com.novelidea.gumeonggage.entity.Sales;
 import com.novelidea.gumeonggage.repository.MenuMapper;
 import com.novelidea.gumeonggage.repository.OrderMapper;
+import com.novelidea.gumeonggage.repository.SalesMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -22,6 +23,9 @@ public class AdminMenuService {
 
     @Autowired
     private OrderMapper orderMapper;
+
+    @Autowired
+    private SalesMapper salesMapper;
 
     @Transactional(rollbackFor = Exception.class)
     public int saveMenu(AdminRegisterMenuReqDto adminRegisterMenuReqDto) {
@@ -48,8 +52,5 @@ public class AdminMenuService {
     public int completeMenu(int orderListId) {
         return orderMapper.completeMenuByOrderListId(orderListId);
     }
-
-
-
 
 }

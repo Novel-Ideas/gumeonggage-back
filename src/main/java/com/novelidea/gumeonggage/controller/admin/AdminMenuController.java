@@ -32,5 +32,5 @@ public class AdminMenuController {
     public ResponseEntity<?> deleteMenu(@RequestParam int menuId) {
         return ResponseEntity.ok(adminMenuService.deleteMenu(menuId));
     }
-}
 
+}

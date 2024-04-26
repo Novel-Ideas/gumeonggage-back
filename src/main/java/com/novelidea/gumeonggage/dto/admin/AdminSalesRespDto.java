@@ -3,8 +3,8 @@ package com.novelidea.gumeonggage.dto.admin;
 import lombok.Builder;
 import lombok.Data;
 
-@Builder
 @Data
+@Builder
 public class AdminSalesRespDto {
     private int month;
     private int orderCount;
