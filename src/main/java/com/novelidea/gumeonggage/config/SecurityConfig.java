@@ -52,16 +52,13 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         http.authorizeRequests()
                 .antMatchers(
                         "/server/**",
-                        "/admin/auth/**",
+                        "/admin/**",
                         "/auth/**",
                         "/menus/**",
                         "/menu/**",
                         "/point",
-                        "/admin/sales/**",
                         "/order",
                         "/feedback/add",
-                        "/admin/feedback/answer",
-                        "/admin/feedback/answercount",
                         "/oauth2/**"
                 )
                 .permitAll()
