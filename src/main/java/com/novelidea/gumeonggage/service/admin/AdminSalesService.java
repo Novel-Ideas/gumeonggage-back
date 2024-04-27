@@ -20,7 +20,6 @@ public class AdminSalesService {
 
     public List<AdminSalesRespDto> getSales() {
         List<Sales> sales = salesMapper.getSales();
-        System.out.println(sales);
 
         return sales.stream().map(Sales::toAdminSalesRespDto).collect(Collectors.toList());
     }

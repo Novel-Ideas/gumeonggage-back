@@ -6,6 +6,7 @@
 <mapper namespace="com.novelidea.gumeonggage.repository.SalesMapper">
 
     <resultMap id="SalesResultMap" type="com.novelidea.gumeonggage.entity.Sales">
+        <result property="year" column="year" />
         <result property="month" column="month" />
         <result property="orderCount" column="order_count" />
         <result property="totalSales" column="total_sales" />
@@ -19,14 +20,30 @@
     </resultMap>
 
     <select id="getSales" resultMap="SalesResultMap">
+<!--        select-->
+<!--            DATE_FORMAT(order_time,'%m') as month,-->
+<!--            sum(menu_price_total) as total_sales,-->
+<!--            (select count(distinct order_list_id) from m_sales) as order_count-->
+<!--        from-->
+<!--            m_sales-->
+<!--        group by-->
+<!--            month;-->
         select
-            DATE_FORMAT(order_time,'%m') as month,
-            sum(menu_price_total) as total_sales,
-            (select count(distinct order_list_id) from m_sales) as order_count
+            year,
+            month,
+            count(distinct order_list_id) as order_count,
+            sum(menu_price_total) as total_sales
         from
-            m_sales
+
+            (select
+                *,
+                date_format(order_time, "%Y") as year,
+                date_format(order_time, "%m") as month
+            from
+            m_sales) ms
         group by
-            month;
+            year,
+            month
     </select>
 
     <select id="findSales" resultMap="MenuSalesResultMap">

@@ -12,12 +12,14 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Sales {
+    private int year;
     private int month;
     private int orderCount;
     private int totalSales;
 
     public AdminSalesRespDto toAdminSalesRespDto() {
         return AdminSalesRespDto.builder()
+                .year(year)
                 .month(month)
                 .orderCount(orderCount)
                 .totalSales(totalSales)

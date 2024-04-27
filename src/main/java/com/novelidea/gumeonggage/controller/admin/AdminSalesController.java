@@ -14,7 +14,6 @@ public class AdminSalesController {
 
     @GetMapping("/sales")
     public ResponseEntity<?> getSales() {
-        System.out.println("요청");
         return ResponseEntity.ok().body(adminSalesService.getSales());
     }
 
