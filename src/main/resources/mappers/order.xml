@@ -22,8 +22,6 @@
         insert into order_list_tb
         values(
         0,
-        1,
-        now(),
         now()
         )
     </insert>
@@ -36,16 +34,6 @@
             (0, #{order.orderListId}, #{order.menuId}, #{order.menuCount})
         </foreach>
     </insert>
-
-    <update id="completeMenuByOrderListId" parameterType="com.novelidea.gumeonggage.entity.OrderList">
-        update
-        order_list_tb
-        set
-        order_ok = 2
-
-        where
-        order_list_id = #{orderListId}
-    </update>
 
     <select id="getRanking" resultMap="OrderResultMap">
         select
