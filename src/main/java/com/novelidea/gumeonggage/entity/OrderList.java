@@ -13,8 +13,6 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 public class OrderList {
     private int orderListId;
-    private boolean orderOk;
     private LocalDateTime orderTime;
-    private LocalDateTime orderOkTime;
 
 }

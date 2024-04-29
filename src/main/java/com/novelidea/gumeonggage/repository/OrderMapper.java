@@ -13,8 +13,6 @@ public interface OrderMapper {
 
     public int addOrders(List<Order> orders);
 
-    public int completeMenuByOrderListId(int orderListId);
-
     public List<Order> getRanking();
 
 }
