@@ -31,6 +31,8 @@
         <result property="adminPassword" column="admin_password" />
         <result property="tradeName" column="trade_name" />
         <result property="email" column="email" />
+        <result property="feedbackUse" column="feedback_use" />
+        <result property="playUse" column="play_use" />
         <result property="imgUrl" column="img_url" />
         <result property="createDate" column="create_date" />
         <result property="updateDate" column="update_date" />
@@ -69,7 +71,7 @@
             useGeneratedKeys="true"
     >
         insert into admin_tb
-        values(0, #{adminName}, #{adminPassword}, #{tradeName}, #{email}, "https://firebasestorage.googleapis.com/v0/b/gumeonggage-e7859.appspot.com/o/admin%2Fimg%2Flogo.jpg?alt=media&amp;token=9a43176d-8e67-4be4-add1-97270c626fcc", now(), now())
+        values(0, #{adminName}, #{adminPassword}, #{tradeName}, #{email}, 0, 0, "https://firebasestorage.googleapis.com/v0/b/gumeonggage-e7859.appspot.com/o/admin%2Fimg%2Flogo.jpg?alt=media&amp;token=9a43176d-8e67-4be4-add1-97270c626fcc", now(), now())
     </insert>
 
     <insert id="saveRole" parameterType="integer">
@@ -88,6 +90,8 @@
             at.admin_password,
             at.trade_name,
             at.email,
+            at.feedback_use,
+            at.play_use,
             at.img_url,
             at.create_date,
             at.update_date,
@@ -166,6 +170,16 @@
             img_url = #{imgUrl},
             update_date = now()
         where
+            admin_id = #{adminId}
+    </update>
+
+    <update id="storeSettingChange" parameterType="com.novelidea.gumeonggage.entity.Admin">
+        update
+            admin_tb
+        set
+            feedback_use = #{feedbackUse},
+            play_use = #{playUse}
+      where
             admin_id = #{adminId}
     </update>
 

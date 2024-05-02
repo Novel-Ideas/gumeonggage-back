@@ -23,6 +23,8 @@ public class Admin {
     private String adminPassword;
     private String tradeName;
     private String email;
+    private int feedbackUse;
+    private int playUse;
     private String imgUrl;
     private LocalDate createDate;
     private LocalDate updateDate;
@@ -44,6 +46,8 @@ public class Admin {
                 .username(adminName)
                 .tradename(tradeName)
                 .email(email)
+                .feedbackUse(feedbackUse)
+                .playUse(playUse)
                 .imgUrl(imgUrl)
                 .authorities(getAuthorities())
                 .build();

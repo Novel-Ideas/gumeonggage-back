@@ -1,6 +1,7 @@
 package com.novelidea.gumeonggage.service.admin;
 
 import com.novelidea.gumeonggage.dto.admin.AdminLogoReqDto;
+import com.novelidea.gumeonggage.dto.admin.AdminStoreSettingReqDto;
 import com.novelidea.gumeonggage.dto.admin.EditPasswordReqDto;
 import com.novelidea.gumeonggage.dto.admin.EditTradeNameReqDto;
 import com.novelidea.gumeonggage.entity.Admin;
@@ -47,6 +48,13 @@ public class AccountService {
         adminMapper.updateLogo(admin);
     }
 
+    public int storeSettingChange(AdminStoreSettingReqDto adminStoreSettingReqDto){
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        Admin admin = adminMapper.findAdminByUsername(authentication.getName());
+        admin.setFeedbackUse(adminStoreSettingReqDto.getFeedbackUse());
+        admin.setPlayUse(adminStoreSettingReqDto.getPlayUse());
+        return adminMapper.storeSettingChange(admin);
+      
     public void editTradeName(EditTradeNameReqDto editTradeNameReqDto) {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         Admin admin = adminMapper.findAdminByUsername(authentication.getName());

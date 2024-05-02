@@ -19,6 +19,8 @@ public class PrincipalUser implements UserDetails {
     private String username;
     private String tradename;
     private String email;
+    private int feedbackUse;
+    private int playUse;
     private String imgUrl;
     private List<SimpleGrantedAuthority> authorities;
 
