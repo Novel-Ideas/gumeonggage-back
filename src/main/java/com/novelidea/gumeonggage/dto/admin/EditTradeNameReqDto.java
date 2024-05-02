@@ -4,5 +4,5 @@ import lombok.Data;
 
 @Data
 public class EditTradeNameReqDto {
-    private String newTradeName;
+    private String tradeName;
 }
