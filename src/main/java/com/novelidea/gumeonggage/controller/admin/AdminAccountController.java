@@ -46,4 +46,5 @@ public class AdminAccountController {
         accountService.editTradeName(editTradeNameReqDto);
         return ResponseEntity.ok(true);
     }
+
 }
