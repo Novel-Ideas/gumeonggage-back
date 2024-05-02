@@ -3,6 +3,7 @@ package com.novelidea.gumeonggage.controller.admin;
 import com.novelidea.gumeonggage.dto.admin.AdminLogoReqDto;
 import com.novelidea.gumeonggage.dto.admin.AdminStoreSettingReqDto;
 import com.novelidea.gumeonggage.dto.admin.EditPasswordReqDto;
+import com.novelidea.gumeonggage.dto.admin.EditTradeNameReqDto;
 import com.novelidea.gumeonggage.security.PrincipalUser;
 import com.novelidea.gumeonggage.service.admin.AccountService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -41,14 +42,15 @@ public class AdminAccountController {
         return ResponseEntity.ok(true);
     }
 
-//    @PutMapping("tradename")
-//    public ResponseEntity<?> editTradeName(@Valid @RequestBody) {
-//        return ResponseEntity.ok(null);
-//    }
-
     @PutMapping("/storesetting")
     public ResponseEntity<?> storeSettingChange(@RequestBody AdminStoreSettingReqDto adminStoreSettingReqDto){
 
         return ResponseEntity.ok(accountService.storeSettingChange(adminStoreSettingReqDto));
     }
+    @PutMapping("tradename")
+    public ResponseEntity<?> editTradeName(@Valid @RequestBody EditTradeNameReqDto editTradeNameReqDto, BindingResult bindingResult) {
+        accountService.editTradeName(editTradeNameReqDto);
+        return ResponseEntity.ok(true);
+    }
+
 }

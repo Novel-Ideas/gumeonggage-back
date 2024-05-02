@@ -20,4 +20,5 @@ public interface AdminMapper {
     public List<User> getUserAuth();
     public int updateLogo(Admin admin);
     public int storeSettingChange(Admin admin);
+    public int modifyTradeName(Admin admin);
 }
