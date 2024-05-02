@@ -21,7 +21,7 @@ public class Admin {
     private int adminId;
     private String adminName;
     private String adminPassword;
-    private String name;
+    private String tradeName;
     private String email;
     private String imgUrl;
     private LocalDate createDate;
@@ -42,7 +42,7 @@ public class Admin {
         return PrincipalUser.builder()
                 .userId(adminId)
                 .username(adminName)
-                .name(name)
+                .tradename(tradeName)
                 .email(email)
                 .imgUrl(imgUrl)
                 .authorities(getAuthorities())

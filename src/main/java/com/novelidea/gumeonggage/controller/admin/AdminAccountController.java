@@ -39,4 +39,7 @@ public class AdminAccountController {
         accountService.updateLogo(adminLogoReqDto);
         return ResponseEntity.ok(true);
     }
+
+    @PutMapping("tradename")
+    public ResponseEntity<?> editTradeName(@Valid @RequestBody)
 }
