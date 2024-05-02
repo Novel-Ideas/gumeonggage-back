@@ -48,17 +48,18 @@ public class AccountService {
         adminMapper.updateLogo(admin);
     }
 
-    public int storeSettingChange(AdminStoreSettingReqDto adminStoreSettingReqDto){
+    public int storeSettingChange(AdminStoreSettingReqDto adminStoreSettingReqDto) {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         Admin admin = adminMapper.findAdminByUsername(authentication.getName());
         admin.setFeedbackUse(adminStoreSettingReqDto.getFeedbackUse());
         admin.setPlayUse(adminStoreSettingReqDto.getPlayUse());
         return adminMapper.storeSettingChange(admin);
+    }
       
     public void editTradeName(EditTradeNameReqDto editTradeNameReqDto) {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         Admin admin = adminMapper.findAdminByUsername(authentication.getName());
-        admin.setTradeName(editTradeNameReqDto.getNewTradeName());
+        admin.setTradeName(editTradeNameReqDto.getTradeName());
         adminMapper.modifyTradeName(admin);
     }
 
