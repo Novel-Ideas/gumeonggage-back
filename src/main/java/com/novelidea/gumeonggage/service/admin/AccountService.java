@@ -1,6 +1,7 @@
 package com.novelidea.gumeonggage.service.admin;
 
 import com.novelidea.gumeonggage.dto.admin.AdminLogoReqDto;
+import com.novelidea.gumeonggage.dto.admin.CheckPasswordReqDto;
 import com.novelidea.gumeonggage.dto.admin.EditPasswordReqDto;
 import com.novelidea.gumeonggage.entity.Admin;
 import com.novelidea.gumeonggage.exception.ValidException;
@@ -44,6 +45,16 @@ public class AccountService {
         System.out.println(admin);
         admin.setImgUrl(adminLogoReqDto.getImgUrl());
         adminMapper.updateLogo(admin);
+    }
+
+    public void checkPassword(CheckPasswordReqDto checkPasswordReqDto) {
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        Admin admin = adminMapper.findAdminByUsername(authentication.getName());
+        if(!passwordEncoder.matches(checkPasswordReqDto.getPassword(),admin.getAdminPassword())) {
+            throw new ValidException(Map.of("oldPassword", "비밀번호 인증에 실패하였습니다. \n다시입력하세요."));
+        }
+        admin.setAdminPassword(passwordEncoder.encode(checkPasswordReqDto.getPassword()));
+        adminMapper.modifyPassword(admin);
     }
 
 }
