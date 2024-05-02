@@ -4,7 +4,6 @@ import com.novelidea.gumeonggage.dto.admin.AdminRegisterMenuReqDto;
 import com.novelidea.gumeonggage.dto.admin.AdminSearchMenuRespDto;
 import com.novelidea.gumeonggage.dto.admin.AdminUpdateMenuReqDto;
 import com.novelidea.gumeonggage.entity.Menu;
-import com.novelidea.gumeonggage.entity.Sales;
 import com.novelidea.gumeonggage.repository.MenuMapper;
 import com.novelidea.gumeonggage.repository.OrderMapper;
 import com.novelidea.gumeonggage.repository.SalesMapper;
@@ -45,7 +44,7 @@ public class AdminMenuService {
 
     @Transactional(rollbackFor = Exception.class)
     public int deleteMenu(int menuId) {
-       return menuMapper.deleteMenuByMenuId(menuId);
+        return menuMapper.deleteMenuByMenuId(menuId);
     }
 
 }

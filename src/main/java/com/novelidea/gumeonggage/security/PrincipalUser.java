@@ -17,7 +17,7 @@ import java.util.List;
 public class PrincipalUser implements UserDetails {
     private int userId;
     private String username;
-    private String name;
+    private String tradename;
     private String email;
     private String imgUrl;
     private List<SimpleGrantedAuthority> authorities;

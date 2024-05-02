@@ -29,7 +29,7 @@
         <id property="adminId" column="admin_id" />
         <result property="adminName" column="admin_name" />
         <result property="adminPassword" column="admin_password" />
-        <result property="name" column="name" />
+        <result property="tradeName" column="trade_name" />
         <result property="email" column="email" />
         <result property="imgUrl" column="img_url" />
         <result property="createDate" column="create_date" />
@@ -69,7 +69,7 @@
             useGeneratedKeys="true"
     >
         insert into admin_tb
-        values(0, #{adminName}, #{adminPassword}, #{name}, #{email}, "https://firebasestorage.googleapis.com/v0/b/gumeonggage-e7859.appspot.com/o/admin%2Fimg%2Flogo.jpg?alt=media&amp;token=9a43176d-8e67-4be4-add1-97270c626fcc", now(), now())
+        values(0, #{adminName}, #{adminPassword}, #{tradeName}, #{email}, "https://firebasestorage.googleapis.com/v0/b/gumeonggage-e7859.appspot.com/o/admin%2Fimg%2Flogo.jpg?alt=media&amp;token=9a43176d-8e67-4be4-add1-97270c626fcc", now(), now())
     </insert>
 
     <insert id="saveRole" parameterType="integer">
@@ -86,7 +86,7 @@
             at.admin_id,
             at.admin_name,
             at.admin_password,
-            at.name,
+            at.trade_name,
             at.email,
             at.img_url,
             at.create_date,
@@ -139,7 +139,7 @@
             at.admin_id,
             at.admin_name,
             at.admin_password,
-            at.name,
+            at.trade_name,
             at.email,
             at.create_date,
             at.update_date,
