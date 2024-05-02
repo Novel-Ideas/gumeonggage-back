@@ -2,7 +2,9 @@ package com.novelidea.gumeonggage.service.admin;
 
 import com.novelidea.gumeonggage.dto.admin.AdminLogoReqDto;
 import com.novelidea.gumeonggage.dto.admin.CheckPasswordReqDto;
+import com.novelidea.gumeonggage.dto.admin.AdminStoreSettingReqDto;
 import com.novelidea.gumeonggage.dto.admin.EditPasswordReqDto;
+import com.novelidea.gumeonggage.dto.admin.EditTradeNameReqDto;
 import com.novelidea.gumeonggage.entity.Admin;
 import com.novelidea.gumeonggage.exception.ValidException;
 import com.novelidea.gumeonggage.repository.AdminMapper;
@@ -55,6 +57,20 @@ public class AccountService {
         }
         admin.setAdminPassword(passwordEncoder.encode(checkPasswordReqDto.getPassword()));
         adminMapper.modifyPassword(admin);
+      
+    public int storeSettingChange(AdminStoreSettingReqDto adminStoreSettingReqDto) {
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        Admin admin = adminMapper.findAdminByUsername(authentication.getName());
+        admin.setFeedbackUse(adminStoreSettingReqDto.getFeedbackUse());
+        admin.setPlayUse(adminStoreSettingReqDto.getPlayUse());
+        return adminMapper.storeSettingChange(admin);
+    }
+      
+    public void editTradeName(EditTradeNameReqDto editTradeNameReqDto) {
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        Admin admin = adminMapper.findAdminByUsername(authentication.getName());
+        admin.setTradeName(editTradeNameReqDto.getTradeName());
+        adminMapper.modifyTradeName(admin);
     }
 
 }

@@ -19,4 +19,6 @@ public interface AdminMapper {
     public Admin findAdminByOAuth2name(String oAuth2name);
     public List<User> getUserAuth();
     public int updateLogo(Admin admin);
+    public int storeSettingChange(Admin admin);
+    public int modifyTradeName(Admin admin);
 }
