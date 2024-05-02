@@ -1,6 +1,7 @@
 package com.novelidea.gumeonggage.controller.admin;
 
 import com.novelidea.gumeonggage.dto.admin.AdminLogoReqDto;
+import com.novelidea.gumeonggage.dto.admin.CheckPasswordReqDto;
 import com.novelidea.gumeonggage.dto.admin.AdminStoreSettingReqDto;
 import com.novelidea.gumeonggage.dto.admin.EditPasswordReqDto;
 import com.novelidea.gumeonggage.dto.admin.EditTradeNameReqDto;
@@ -33,6 +34,12 @@ public class AdminAccountController {
     @PutMapping("/password")
     public ResponseEntity<?> editPassword(@Valid @RequestBody EditPasswordReqDto editPasswordReqDto, BindingResult bindingResult) {
         accountService.editPassword(editPasswordReqDto);
+        return ResponseEntity.ok(true);
+    }
+
+    @PutMapping("/password/check")
+    public ResponseEntity<?> checkPassword(@Valid @RequestBody CheckPasswordReqDto checkPasswordReqDto, BindingResult bindingResult) {
+        accountService.checkPassword(checkPasswordReqDto);
         return ResponseEntity.ok(true);
     }
 
