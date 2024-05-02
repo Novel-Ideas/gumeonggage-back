@@ -169,4 +169,14 @@
             admin_id = #{adminId}
     </update>
 
+    <update id="modifyTradeName" parameterType="com.novelidea.gumeonggage.entity.Admin">
+        update
+            admin_tb
+        set
+            trade_name = #{tradeName},
+            update_date = now()
+        where
+            admin_id = #{adminId}
+    </update>
+
 </mapper>
