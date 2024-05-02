@@ -40,6 +40,8 @@ public class AdminAccountController {
         return ResponseEntity.ok(true);
     }
 
-    @PutMapping("tradename")
-    public ResponseEntity<?> editTradeName(@Valid @RequestBody)
+//    @PutMapping("tradename")
+//    public ResponseEntity<?> editTradeName(@Valid @RequestBody) {
+//        return ResponseEntity.ok(null);
+//    }
 }
