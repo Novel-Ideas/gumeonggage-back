@@ -52,12 +52,12 @@ public class AccountService {
     public void checkPassword(CheckPasswordReqDto checkPasswordReqDto) {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         Admin admin = adminMapper.findAdminByUsername(authentication.getName());
-        if(!passwordEncoder.matches(checkPasswordReqDto.getPassword(),admin.getAdminPassword())) {
+        if (!passwordEncoder.matches(checkPasswordReqDto.getPassword(), admin.getAdminPassword())) {
             throw new ValidException(Map.of("oldPassword", "비밀번호 인증에 실패하였습니다. \n다시입력하세요."));
         }
         admin.setAdminPassword(passwordEncoder.encode(checkPasswordReqDto.getPassword()));
         adminMapper.modifyPassword(admin);
-      
+    }
     public int storeSettingChange(AdminStoreSettingReqDto adminStoreSettingReqDto) {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         Admin admin = adminMapper.findAdminByUsername(authentication.getName());
