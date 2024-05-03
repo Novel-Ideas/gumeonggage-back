@@ -11,7 +11,7 @@ import javax.validation.constraints.Pattern;
 
 @Data
 public class OAuth2SignupReqDto {
-    @Pattern(regexp = "^[A-Za-z0-9]{4,10}$", message = "비밀번호는 영문자, 숫자 5 ~ 10자리 형식이어야 합니다.")
+    @Pattern(regexp = "^[A-Za-z0-9]{4,10}$", message = "아이디는 영문자, 숫자 5 ~ 10자리 형식이어야 합니다.")
     private String username;
     @Pattern(regexp = "^(?=.*[A-Za-z])(?=.*\\d)(?=.*[@$!%*#?&])[A-Za-z\\d@$!%*#?&]{7,128}$",message = "비밀번호는 영문자, 숫자, 특수문자를 포함한 5  5 ~ 128자리 형식이어야 합니다.")
     private String password;
