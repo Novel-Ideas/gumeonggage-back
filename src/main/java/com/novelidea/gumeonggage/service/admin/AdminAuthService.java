@@ -55,9 +55,4 @@ public class AdminAuthService {
         return jwtProvider.generateToken(admin);
     }
 
-    public List<User> getAllUser() {
-
-        return adminMapper.getUserAuth();
-    }
-
 }

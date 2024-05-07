@@ -1,5 +1,6 @@
 package com.novelidea.gumeonggage.controller.admin;
 
+import com.novelidea.gumeonggage.aop.annotation.ValidAspect;
 import com.novelidea.gumeonggage.dto.admin.AdminLogoReqDto;
 import com.novelidea.gumeonggage.dto.admin.CheckPasswordReqDto;
 import com.novelidea.gumeonggage.dto.admin.AdminStoreSettingReqDto;
@@ -30,13 +31,13 @@ public class AdminAccountController {
         PrincipalUser principalUser = (PrincipalUser) authentication.getPrincipal();
         return ResponseEntity.ok(principalUser);
     }
-
+    @ValidAspect
     @PutMapping("/password")
     public ResponseEntity<?> editPassword(@Valid @RequestBody EditPasswordReqDto editPasswordReqDto, BindingResult bindingResult) {
         accountService.editPassword(editPasswordReqDto);
         return ResponseEntity.ok(true);
     }
-
+    @ValidAspect
     @PutMapping("/password/check")
     public ResponseEntity<?> checkPassword(@Valid @RequestBody CheckPasswordReqDto checkPasswordReqDto, BindingResult bindingResult) {
         accountService.checkPassword(checkPasswordReqDto);
@@ -58,6 +59,10 @@ public class AdminAccountController {
     public ResponseEntity<?> editTradeName(@Valid @RequestBody EditTradeNameReqDto editTradeNameReqDto, BindingResult bindingResult) {
         accountService.editTradeName(editTradeNameReqDto);
         return ResponseEntity.ok(true);
+    }
+    @GetMapping("/users")
+    public ResponseEntity<?> getUserAuth() {
+        return ResponseEntity.ok().body(accountService.getAllUser());
     }
 
 }

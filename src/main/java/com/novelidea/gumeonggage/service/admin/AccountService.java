@@ -6,6 +6,7 @@ import com.novelidea.gumeonggage.dto.admin.AdminStoreSettingReqDto;
 import com.novelidea.gumeonggage.dto.admin.EditPasswordReqDto;
 import com.novelidea.gumeonggage.dto.admin.EditTradeNameReqDto;
 import com.novelidea.gumeonggage.entity.Admin;
+import com.novelidea.gumeonggage.entity.User;
 import com.novelidea.gumeonggage.exception.ValidException;
 import com.novelidea.gumeonggage.repository.AdminMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,6 +15,7 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Map;
 
 @Service
@@ -73,5 +75,11 @@ public class AccountService {
         admin.setTradeName(editTradeNameReqDto.getTradeName());
         adminMapper.modifyTradeName(admin);
     }
+
+    public List<User> getAllUser() {
+
+        return adminMapper.getUserAuth();
+    }
+
 
 }
