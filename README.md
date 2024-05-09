@@ -33,6 +33,8 @@
 
 ## ✨ 프로젝트 소개 [Notion](https://mangrove-comic-a17.notion.site/Team-Project-dc414362131b4ee799fa852737236fa9?pvs=4)
 
+![header](https://github.com/Novel-Ideas/gumeonggage-back/assets/106566223/557cd871-61f7-43cc-b4a1-0f19b6e3bfcc)
+
 ### 🌟 제목
 
 -   매장용 키오스크 "구멍가게" 개발
@@ -83,6 +85,10 @@
 <br/>
 <br/>
 
+<p align="right" dir="auto">
+<a href="https://github.com/Novel-Ideas/gumeonggage-front">TOP 🔼</a>
+</p>
+
 ## 👥 팀원 소개
 
 <div align="center">
@@ -121,6 +127,10 @@
     </tbody>
 </table>
 </div>
+
+<p align="right" dir="auto">
+<a href="https://github.com/Novel-Ideas/gumeonggage-front">TOP 🔼</a>
+</p>
 
 ## 💼 역할 분담
 
@@ -225,6 +235,10 @@
 -   API 명세서 작성
 -   DB 설계
 
+<p align="right" dir="auto">
+<a href="https://github.com/Novel-Ideas/gumeonggage-front">TOP 🔼</a>
+</p>
+
 <br/>
 <br/>
 
@@ -246,17 +260,24 @@
 
 5. PR이 merge되어 close 되면 해당 이슈는 자동으로 Done상태로 변경됩니다.
 
+<p align="right" dir="auto">
+<a href="https://github.com/Novel-Ideas/gumeonggage-front">TOP 🔼</a>
+</p>
+
 <br/>
 <br/>
 
 ## 📚 프로젝트 진행 상황 관리
 
 -   <a href="https://github.com/Novel-Ideas/gumeonggage-front/issues?q=is%3Aissue+is%3Aclosed">📋 GitHub Issues(Front) & </a>
-    <a href="https://github.com/Novel-Ideas/gumeonggage-back/issues?q=is%3Aissue+is%3Aclosed"> GitHub Issues(Back) </a> 
-    + 간편한 이슈 생성을 위해 이슈 템플릿을 만들어 사용했습니다. + 팀원이 현재 어떤 작업을 진행하고 있는지를 바로 알 수 있어 의사소통 비용을 줄일 수 있었습니다.
+    <a href="https://github.com/Novel-Ideas/gumeonggage-back/issues?q=is%3Aissue+is%3Aclosed"> GitHub Issues(Back) </a>
+    -   간편한 이슈 생성을 위해 이슈 템플릿을 만들어 사용했습니다. + 팀원이 현재 어떤 작업을 진행하고 있는지를 바로 알 수 있어 의사소통 비용을 줄일 수 있었습니다.
 -   <a href="https://github.com/orgs/Novel-Ideas/projects/1">📁 GitHub Projects</a>
     -   칸반 보드로 프로젝트 진행 상황을 한 눈에 확인할 수 있어 일정을 관리하기 수월했습니다.
 
+<p align="right" dir="auto">
+<a href="https://github.com/Novel-Ideas/gumeonggage-front">TOP 🔼</a>
+</p>
     
 <br/>
 <br/>
@@ -270,6 +291,10 @@
 -   프로젝트 기간 동안 팀원들이 같은 시간에 작업하기 때문에 잦은 충돌이 발생할 것을 우려하여 충돌의 크기를 줄이고자 GitHub Flow 전략을 채택하여 작은 단위로 이슈를 쪼개 이슈 별로 브랜치를 분기하고 main 브랜치에 지속적으로 merge 하는 방식으로 진행했습니다.
 
 -   기본적으로 master branch에 대한 규칙만 정확하게 정립되어 있다면 나머지 가지들에 대해서는 특별한 관여를 하지 않으며 pull request기능을 사용하도록 권장하였습니다.
+
+<p align="right" dir="auto">
+<a href="https://github.com/Novel-Ideas/gumeonggage-front">TOP 🔼</a>
+</p>
 
 <br/>
 <br/>
@@ -380,6 +405,10 @@
 </pre>
 </div>
 
+<p align="right" dir="auto">
+<a href="https://github.com/Novel-Ideas/gumeonggage-front">TOP 🔼</a>
+</p>
+
 <br/>
 <br/>
 
@@ -472,6 +501,10 @@
 | uuid                                                                        | 고유 아이디 값을 생성하는 함수 제공        |
 | web-vitals                                                                  | 사용자의 웹 바이탈 항목 측정               |
 
+<p align="right" dir="auto">
+<a href="https://github.com/Novel-Ideas/gumeonggage-front">TOP 🔼</a>
+</p>
+
 <br/>
 <br/>
 
@@ -479,6 +512,10 @@
 
 ![스크린샷 2024-05-07 오전 11 43 01](https://github.com/Novel-Ideas/gumeonggage-front/assets/106566223/2dcefa79-71da-4f61-ab5a-dba055d17ad4)
 ![스크린샷 2024-05-07 오전 11 43 05](https://github.com/Novel-Ideas/gumeonggage-front/assets/106566223/dba81999-e57a-40ee-a4fe-b4b2a2702241)
+
+<p align="right" dir="auto">
+<a href="https://github.com/Novel-Ideas/gumeonggage-front">TOP 🔼</a>
+</p>
 
 <br/>
 <br/>
@@ -493,6 +530,10 @@ https://mangrove-comic-a17.notion.site/da55c3b2cb47486eb592dbc297ae8e01?v=f86578
 
 ![ERD 다이어그램](https://github.com/Novel-Ideas/gumeonggage-front/assets/106566223/5074a2e8-503f-48f6-9b48-dfd2a56f7938)
 
+<p align="right" dir="auto">
+<a href="https://github.com/Novel-Ideas/gumeonggage-front">TOP 🔼</a>
+</p>
+
 <br/>
 <br/>
 
@@ -505,6 +546,10 @@ https://mangrove-comic-a17.notion.site/da55c3b2cb47486eb592dbc297ae8e01?v=f86578
 ### 👷‍♂️ 관리자 메뉴 구조도
 
 ![관리자 메뉴 구조도](https://github.com/Novel-Ideas/gumeonggage-front/assets/106566223/8077db0a-0d1b-4ee8-87bb-4f4117c9f527)
+
+<p align="right" dir="auto">
+<a href="https://github.com/Novel-Ideas/gumeonggage-front">TOP 🔼</a>
+</p>
 
 <br/>
 <br/>
@@ -620,4 +665,8 @@ https://mangrove-comic-a17.notion.site/da55c3b2cb47486eb592dbc297ae8e01?v=f86578
     <img src="https://github.com/Novel-Ideas/gumeonggage-front/assets/106566223/33ab6ec0-4927-4992-b694-367fb6a2ebbf" width="100%"/>
     <b>점포 로고 변경 화면</b>
 </div>
+
+<p align="right" dir="auto">
+<a href="https://github.com/Novel-Ideas/gumeonggage-front">TOP 🔼</a>
+</p>
 </br>
