@@ -669,4 +669,49 @@ https://mangrove-comic-a17.notion.site/da55c3b2cb47486eb592dbc297ae8e01?v=f86578
 <p align="right" dir="auto">
 <a href="https://github.com/Novel-Ideas/gumeonggage-front">TOP 🔼</a>
 </p>
+
 </br>
+</br>
+
+## 💡 느낀점
+
+### 이동윤(팀장)
+
+<div align="center">
+    <img src="https://github.com/Novel-Ideas/gumeonggage-front/assets/83110386/50f5a224-bbbc-4486-9ce0-b873d962898d" width="200" height="200" />
+</div>
+<span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sed vulputate tortor, vel auctor nunc. Suspendisse nec varius quam. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Morbi eu mauris varius, tincidunt mi ut, commodo mauris. Quisque lacinia lobortis urna. Vestibulum id lacinia sapien, eget gravida massa. Donec id eros lacinia, lacinia nulla ac, ornare lorem. Proin ut lacus congue ex consectetur faucibus a sit amet velit. Pellentesque pulvinar egestas nibh at aliquam. Phasellus porttitor posuere lacus, id porta ante. Aenean congue nibh eu ex aliquam, ut sollicitudin risus semper. Ut lobortis, enim eu pretium dignissim, enim tortor interdum libero, eu venenatis ex mi vitae nisi. Nunc suscipit, dolor sit amet euismod varius, sapien neque ullamcorper turpis, a commodo dolor arcu at orci. Maecenas tempor turpis et arcu sagittis euismod.</span>
+
+---
+
+### 이지언
+
+<div align="center">
+    <img src="https://github.com/Novel-Ideas/gumeonggage-front/assets/83110386/37d1fc3b-f435-44d0-adb4-0404c1b71837" width="200" height="200" />
+</div>
+<span>첫 팀 프로젝트라 협업, 명세서, 구조, 진행 방향 등 걱정하는 게 많았는데 기획하는 과정 동안 소통하며 함께 작업하는 동안 협업이 중요하다는 걸 더욱 깨달았습니다.
+프로젝트를 진행하며 맡은 부분을 구현하며 동기, 비동기 부분을 포함하며 모르던 부분을 공부하며 알던 것도 다시 공부하는 시간을 가질 수 있었습니다. 그리고 내가 아닌 다른 사람의 코드를 보면서 처음은 코드를 해석하는 부분이 어려운 부분도 있었지만 이런 식으로도 가능하구나를 깨달을 수 있었습니다.
+그 과정에서 내가 작성한 코드를 다른 사람이 알기 쉽게 작성하는 것이 중요하다는 점을 깨달았습니다.
+그리고 프로젝트를 진행하며 맡은 부분이 있으니 더욱 책임감이 생기고, 그걸 해내면 성취감까지 느낄 수 있었습니다.
+처음 하는 팀 프로젝트라 걱정이 많았지만 팀장이 이끌어주고 조원이 뒤에서 밀어주며 팀 프로젝트를 잘 마무리할 수 있었습니다.</span>
+
+---
+
+### 서현욱
+
+<div align="center">
+    <img src="https://github.com/Novel-Ideas/gumeonggage-front/assets/83110386/b015e01d-1078-428e-a713-a92b23e4ff6a" width="200" height="200" />
+</div>
+
+팀 프로젝트를 진행하며 여러 가지 느낀 점이 있지만 첫 번째로 **협업의 중요성**을 깨달았습니다. 프로젝트의 결과와 별개로 그 과정에서 각자의 역할과 책임을 정하고 소통하며 함께 작업하는 중요성을 깨달았습니다.<br/> 두 번째로는 **문제 해결능력이 향상**되었습니다. 프로젝트 도중 발생한 문제들을 스스로 해결하거나 팀원들과 상의하는 동안 새로운 아이디어를 생각해 내고 습관적으로 사용하고 있던 코드들이 어떻게 상호작용하는지 다시금 생각해 보게 되었습니다.<br/> 세 번째로 **팀원과의 소통의 중요성**을 느꼈습니다 각자의 의견을 나누고 수용하고 제가 생각하지 못하던 부분으로도 누군가 생각할 수 있다는 것을 느꼈습니다.<br/> 네 번째로 **지속적인 검토의 중요성**에 대해 느꼈습니다 코드를 다 작성하고 그 순간 동작이 잘 되는 것을 확인하더라도 팀원들의 다른 코드와 합쳐지면서 생각지도 못한 방향으로 오류가 일어날 수도 있다는 것을 많이 봤습니다 그러면서 작성해둔 코드의 검토와 유지 보수 중요성을 느꼈습니다.<br/> 마지막으로 **팀원들과의 분위기**가 팀 내 프로젝트의 결과물과 과정에 얼마나 큰 영향을 끼치는지 알았습니다. 각자의 일만 잘하는 게 팀 프로젝트의 다가 아니라 긍정적인 분위기와 서로에 대한 신뢰가 팀의 결속력을 다지고 가끔은 서로의 책임보다 더 긍정적인 효과를 나타낼 수도 있다는 것을 느꼈습니다.
+
+---
+
+### 김종현
+
+<div align="center">
+    <img src="https://github.com/Novel-Ideas/gumeonggage-front/assets/83110386/ffb0f7a2-6df1-4935-8b3f-036cf89e344b" width="200" height="200" />
+</div>
+<span>프로젝트 시작 전에는 팀원 간 협업이나 융화가 잘 될까 걱정이 있었습니다. 하지만 기획한 내용대로 프로젝트를 시작하니 팀원 각자가 맡은 부분에서 집중하기 시작했습니다. 프로젝트 진행 중에는  제가 담당한 부분을 구현하기 위해 머리를 싸맨 순간도 많았습니다. 그 시점에는 방법을 찾아 해결하기 위해 고민을 한 시간이 답답하긴 했지만 돌아보고 나니 저에게 꼭 필요한 시간이 아니었을까 싶습니다.
+저 혼자 하는 프로젝트가 아니라 팀 프로젝트이다 보니 팀원 한 명 한 명을 중요하게 여긴 시간이 되기도 했습니다.
+한 가지 아쉬운 점은 제 역량의 부족으로 프로젝트에 활발한 도움이 되지 못했다는 것입니다 </span>
