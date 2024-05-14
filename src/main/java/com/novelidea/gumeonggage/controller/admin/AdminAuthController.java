@@ -48,7 +48,6 @@ public class AdminAuthController {
         oAuth2Service.oAuth2Merge(oAuth2MergeReqDto);
         return ResponseEntity.ok(true);
     }
-                                                                                                                                                            
 
     @GetMapping("/users")
     public ResponseEntity<?> getUserAuth() {

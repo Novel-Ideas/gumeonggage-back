@@ -3,7 +3,7 @@ spring:
     active: local
     group:
       local: local, common, secret
-
+#블루 그린 그룹 추가
 ---
 
 spring:
@@ -18,12 +18,14 @@ spring:
             redirectUri: http://localhost:8080/login/oauth2/code/naver
           kakao:
             redirectUri: http://localhost:8080/login/oauth2/code/kakao
+#로컬 호스트 대신 주소변경 해야함
 
 server:
   port: 8080
   deploy-address: localhost
   name: local
 
+#로컬 블루 그린 나누고 deploy-address 탄력적 ip로 변경
 ---
 
 spring:
